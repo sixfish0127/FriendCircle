@@ -19,6 +19,8 @@ public partial class FriendCircleContext : DbContext
 
     public virtual DbSet<Comments> Comments { get; set; }
 
+    public virtual DbSet<FriendShip> FriendShip { get; set; }
+
     public virtual DbSet<Posts> Posts { get; set; }
 
     public virtual DbSet<ReactionType> ReactionType { get; set; }
@@ -90,6 +92,26 @@ public partial class FriendCircleContext : DbContext
                 .HasConstraintName("FK_Comments_userInfo");
         });
 
+        modelBuilder.Entity<FriendShip>(entity =>
+        {
+            entity.HasIndex(e => new { e.UserId1, e.UserId2 }, "IX_FriendShip");
+
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+
+            entity.HasOne(d => d.UserId1Navigation).WithMany(p => p.FriendShipUserId1Navigation)
+                .HasForeignKey(d => d.UserId1)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_FriendShip_userInfo");
+
+            entity.HasOne(d => d.UserId2Navigation).WithMany(p => p.FriendShipUserId2Navigation)
+                .HasForeignKey(d => d.UserId2)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_FriendShip_userInfo1");
+            entity.Property(f=>f.Status).HasConversion<int>();
+        });
+
         modelBuilder.Entity<Posts>(entity =>
         {
             entity.HasIndex(e => e.PostId, "IX_Posts").IsUnique();
@@ -124,6 +146,7 @@ public partial class FriendCircleContext : DbContext
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_ReactionType_userInfo");
+            entity.Property(f => f.ReactionType1).HasConversion<int>();
         });
 
         modelBuilder.Entity<userInfo>(entity =>

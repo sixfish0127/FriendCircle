@@ -11,7 +11,7 @@ public partial class ReactionType
 
     public int UserId { get; set; }
 
-    public int? ReactionType1 { get; set; }
+    public CommentReactionType ReactionType1 { get; set; }
 
     public DateTime CreatedAt { get; set; }
 

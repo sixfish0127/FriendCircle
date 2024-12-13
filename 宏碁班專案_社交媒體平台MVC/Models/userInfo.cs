@@ -37,6 +37,10 @@ public partial class userInfo
 
     public virtual ICollection<Comments> Comments { get; set; } = new List<Comments>();
 
+    public virtual ICollection<FriendShip> FriendShipUserId1Navigation { get; set; } = new List<FriendShip>();
+
+    public virtual ICollection<FriendShip> FriendShipUserId2Navigation { get; set; } = new List<FriendShip>();
+
     public virtual ICollection<Posts> Posts { get; set; } = new List<Posts>();
 
     public virtual ICollection<ReactionType> ReactionType { get; set; } = new List<ReactionType>();
