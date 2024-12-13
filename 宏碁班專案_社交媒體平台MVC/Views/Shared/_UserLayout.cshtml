@@ -1,0 +1,152 @@
+﻿@using System.Text.Json;
+@model 宏碁班專案_社交媒體平台MVC.Models.userInfo;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@ViewData["Title"]</title>
+
+    <link rel="stylesheet" href="/css/themify-icons.css">
+    <link rel="stylesheet" href="/css/feather.css">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="color-theme-blue">
+
+    <div class="preloader"></div>
+
+    <div class="main-wrap">
+
+        <div class="nav-header bg-transparent shadow-none border-0">
+            <div class="nav-top w-100">
+                <a href="@Url.Action("Index", "Home")"><i class="feather-zap text-success display1-size me-2 ms-0"></i><span class="d-inline-block fredoka-font ls-3 fw-600 text-current font-xxl logo-text mb-0">FriendCircle</span></a>
+                <a href="" class="header-btn d-none d-lg-block bg-dark fw-500 text-white font-xsss p-3 ms-auto w100 text-center lh-20 rounded-xl" data-bs-toggle="modal" data-bs-target="#Modallogin">Login</a>
+                <a href="#" class="header-btn d-none d-lg-block bg-current fw-500 text-white font-xsss p-3 ms-2 w100 text-center lh-20 rounded-xl" data-bs-toggle="modal" data-bs-target="#Modalregister">Register</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-5 d-none d-xl-block p-0 vh-100 bg-image-cover bg-no-repeat" style="background-image: url(/images/login-bg-2.jpg);"></div>        
+        @RenderBody()                    
+    </div>
+    <!-- Modal Register -->
+    <div class="modal bottom fade" style="overflow-y: scroll;" id="Modalregister" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content border-0">
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><i class="ti-close text-grey-500"></i></button>
+                <div class="modal-body p-3 d-flex align-items-center bg-none">
+                    <div class="card shadow-none rounded-0 w-100 p-2 pt-3 border-0">
+                        <div class="card-body rounded-0 text-left p-3">
+                            <h2 class="fw-700 display1-size display2-md-size mb-4">Login into <br>your account</h2>
+                            <form method="post" action="@Url.Action("Register", "User")">
+
+                                <div class="form-group icon-input mb-3">
+                                    <i class="font-sm ti-user text-grey-500 pe-0"></i>
+                                    <input type="text" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Your Name" name="name" value="@Model?.name">
+                                </div>
+
+                                <div class="form-group icon-input mb-3">
+                                    <i class="font-sm ti-email text-grey-500 pe-0"></i>
+                                    <input asp-for="email" type="text" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Your Email Address" name="email" id="email">
+                                    @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                                    <span id="emailError" class="text-danger"></span> <!-- 用於顯示錯誤訊息的元素 -->
+                                </div>
+
+                                <div class="form-group icon-input mb-3">
+                                    <input type="Password" class="style2-input ps-5 form-control text-grey-900 font-xss ls-3" placeholder="Password" name="password" value="@Model?.password">
+                                    <i class="font-sm ti-lock text-grey-500 pe-0"></i>
+                                    @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group icon-input mb-1">
+                                    <input type="Password" class="style2-input ps-5 form-control text-grey-900 font-xss ls-3" placeholder="Confirm Password" name="confirmPassword" value="@Model?.confirmPassword">
+                                    <i class="font-sm ti-lock text-grey-500 pe-0"></i>
+                                    @Html.ValidationMessageFor(model => model.confirmPassword, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-check text-left mb-3">
+                                </div>
+                                <div class="col-sm-12 p-0 text-left">
+                                    <div class="form-group mb-1"><input type="submit" class="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 " value="註冊" /></div>
+                                    <h6 class="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32">Already have account <a href="@Url.Action("Login","User")" class="fw-700 ms-1">Login</a></h6>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Login -->
+    <div class="modal bottom fade" style="overflow-y: scroll;" id="Modallogin" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content border-0">
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><i class="ti-close text-grey-500"></i></button>
+                <div class="modal-body p-3 d-flex align-items-center bg-none">
+                    <div class="card shadow-none rounded-0 w-100 p-2 pt-3 border-0">
+                        <div class="card-body rounded-0 text-left p-3">
+                            <h2 class="fw-700 display1-size display2-md-size mb-4">Login into <br>your account</h2>
+                            <form method="post" action="@Url.Action("Login", "User")">
+
+                                <div class="form-group icon-input mb-3">
+                                    <i class="font-sm ti-email text-grey-500 pe-0"></i>
+                                    <input type="text" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Your Email Address" name="email">
+                                    @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group icon-input mb-3">
+                                    <input type="Password" class="style2-input ps-5 form-control text-grey-900 font-xss ls-3" placeholder="Password" name="password">
+                                    <i class="font-sm ti-lock text-grey-500 pe-0"></i>
+                                    @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-check text-left mb-3">
+                                    <input type="checkbox" class="form-check-input mt-2" id="exampleCheck4" name="remeberMe" value="true">
+                                    <label class="form-check-label font-xsss text-grey-500" for="exampleCheck4">Remember me</label>
+                                    <a href="@Url.Action("Forgot","User")" class="fw-600 font-xsss text-grey-700 mt-1 float-right">Forgot your Password?</a>
+                                </div>
+                                <div class="col-sm-12 p-0 text-left">
+                                    <div class="form-group mb-1"><input type="submit" class="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 " value="登入" /></div>
+                                    <h6 class="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32">Dont have account <a href="@Url.Action("Register","User")" class="fw-700 ms-1">Register</a></h6>
+                                </div>
+                            </form>                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <script src="/js/plugin.js"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script> 
+    // 當Email欄位的值改變時，發送Ajax請求，避免造成資料庫負擔改成前端方式判斷 
+        $("#email").on("change", function () { 
+            var emailValue = $("#email").val(); 
+            var dataValue = { email: emailValue}; 
+            console.log("Email value: " + emailValue); 
+            $.ajax({ 
+                type: "POST", 
+                url: "/User/CheckRepeataccount", 
+                data: JSON.stringify(dataValue),//確保將 dataValue 轉換為 JSON 字串格式，才不會傳入空值 
+                contentType: 'application/json; charset=utf-8', 
+                dataType: 'json', 
+                error: function (XMLHttpRequest, textStatus, errorThrown) { 
+                     alert("Request: " + XMLHttpRequest.toString() + "\n\nStatus: " + textStatus + "\n\nError: " + errorThrown); 
+                }, 
+                success: function (result) { 
+                     if (result) { 
+                        $("#emailError").text(result); 
+                    } else { 
+                        $("#emailError").text(""); 
+                     } 
+                } 
+            }); 
+        }); 
+     </script> 
+</body>
+</html>

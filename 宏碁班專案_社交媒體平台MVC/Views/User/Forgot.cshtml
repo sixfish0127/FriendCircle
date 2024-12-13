@@ -1,0 +1,36 @@
+﻿@model 宏碁班專案_社交媒體平台MVC.Models.userInfo;
+@{
+	ViewData["Title"] = "忘記密碼"; 
+}
+<div class="col-xl-7 vh-100 align-items-center d-flex bg-white rounded-3 overflow-hidden">
+    <div class="card shadow-none border-0 ms-auto me-auto login-card">
+        <div class="card-body rounded-0 text-left">
+            <h2 class="fw-700 display1-size display2-md-size mb-4">Change <br>your password</h2>
+            <form method="post" action="@Url.Action("Forgot","User")">
+
+                <div class="form-group icon-input mb-3">
+                    <i class="font-sm ti-email text-grey-500 pe-0"></i>
+                    <input type="text" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Your Email Address" name="email">
+                    @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                </div>
+                            
+                <div class="form-group icon-input mb-1">
+                    <input type="Password" class="style2-input ps-5 form-control text-grey-900 font-xss ls-3" placeholder="New Password" name="newPassword" >
+                    <i class="font-sm ti-lock text-grey-500 pe-0"></i>
+                </div>
+
+                <div class="form-group icon-input mb-1">
+                    <input type="Password" class="style2-input ps-5 form-control text-grey-900 font-xss ls-3" placeholder="Confirm Password" name="confirmPassword">
+                    <i class="font-sm ti-lock text-grey-500 pe-0"></i>
+                    @Html.ValidationMessageFor(model => model.confirmPassword, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-sm-12 p-0 text-left">
+                    <div class="form-group mb-1"><input type="submit" value="變更密碼" class="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 "></div>
+                </div>
+                            
+            </form>                                                    
+        </div>
+    </div>
+</div>         
+
+
