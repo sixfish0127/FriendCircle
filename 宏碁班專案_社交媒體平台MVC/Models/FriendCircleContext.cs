@@ -81,7 +81,7 @@ public partial class FriendCircleContext : DbContext
                 .HasConstraintName("FK_Comments_Comments");
 
             entity.HasOne(d => d.Post).WithMany(p => p.Comments)
-                .HasPrincipalKey(p => p.PostId)
+                .HasPrincipalKey(p => p.Id)
                 .HasForeignKey(d => d.PostId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Comments_Posts");
@@ -113,9 +113,7 @@ public partial class FriendCircleContext : DbContext
         });
 
         modelBuilder.Entity<Posts>(entity =>
-        {
-            entity.HasIndex(e => e.PostId, "IX_Posts").IsUnique();
-
+        {            
             entity.Property(e => e.Content).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")

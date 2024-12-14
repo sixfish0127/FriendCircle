@@ -27,6 +27,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[FriendShip]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[Posts]",
          "ObjectType": 0
       },
