@@ -24,26 +24,6 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
             
             return View(user);
         }
-        // 顯示所有貼文
-        public async Task<IActionResult> Index()
-        {
-            var posts = await _friendCircleContext.Posts.OrderByDescending(p => p.CreatedAt).ToListAsync();
-            return View(posts);
-        }
-        // 處理新增貼文的請求
-        [HttpPost]
-        //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Content")] Posts post)
-        {
-            if (ModelState.IsValid)
-            {
-                var UserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value; // 從登入的用戶取得用戶 ID
-                post.UserId = int.Parse(UserId);
-                _friendCircleContext.Add(post);
-                await _friendCircleContext.SaveChangesAsync();
-                return RedirectToAction("Newsfeed");
-            }
-            return View();
-        }
+                
     }
 }

@@ -20,15 +20,21 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
         public async Task<IActionResult> GetPosts()
         {
             var posts = await _friendCircleContext.Posts
+                .Include(p => p.User)
                 .OrderByDescending(p => p.CreatedAt)
                 .Select(p => new
                 {
                     p.Id,
                     p.Content,
                     p.CreatedAt,
-                    User = p.UserId // 替換為用戶名稱
+                    user = p.User.name, // 替換為用戶名稱
+                    image = p.User.userimage
                 })
                 .ToListAsync();
+            foreach (var post in posts)
+            {
+                Console.WriteLine($"Id: {post.Id}, Content: {post.Content}, User: {post.user}");
+            }
 
             return Ok(posts);
         }
@@ -36,7 +42,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
         public async Task<IActionResult> CreatePost([FromBody] Posts post)
         {
             if (ModelState.IsValid)
-            {
+            {                
                 // 檢查用戶是否已經登入或NameIdentifier為空
                 var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
                 if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
@@ -51,6 +57,11 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
                     .Where(u => u.id == post.UserId)
                     .Select(u => u.name)
                     .FirstOrDefaultAsync();
+                // 從用戶 ID 取得用戶頭像
+                var userimgage = await _friendCircleContext.userInfo
+                    .Where(u => u.id == post.UserId)
+                    .Select(u => u.userimage)
+                    .FirstOrDefaultAsync();
                 // 設定貼文的建立時間
                 post.CreatedAt = DateTime.Now;
                 // 新增貼文
@@ -62,7 +73,8 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
                     post.Id,
                     post.Content,
                     post.CreatedAt,
-                    User = userName?? "Unknown"
+                    User = userName?? "Unknown",
+                    Image = userimgage ?? "Unknown"
                 });
             }
             // 回傳錯誤訊息

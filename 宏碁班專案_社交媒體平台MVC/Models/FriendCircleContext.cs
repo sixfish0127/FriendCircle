@@ -117,8 +117,7 @@ public partial class FriendCircleContext : DbContext
             entity.Property(e => e.Content).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime");
-            entity.Property(e => e.Title).IsRequired();
+                .HasColumnType("datetime");            
 
             entity.HasOne(d => d.User).WithMany(p => p.Posts)
                 .HasForeignKey(d => d.UserId)
