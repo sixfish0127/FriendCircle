@@ -1,12 +1,55 @@
 [
   {
+    "ContainingType": "\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC.Controllers.CommentsApiController",
+    "Method": "AddComment",
+    "RelativePath": "api/comments",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "comment",
+        "Type": "\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC.Models.Comments",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC.Controllers.CommentsApiController",
+    "Method": "GetComments",
+    "RelativePath": "api/comments/{postId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC.Controllers.PostsApiController",
     "Method": "GetPosts",
     "RelativePath": "api/posts",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {

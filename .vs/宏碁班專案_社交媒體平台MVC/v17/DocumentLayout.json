@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\x1620\\Desktop\\JackyProjct\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{28ADAA14-029C-4F00-A4C7-D8A598702FA4}|\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC.csproj|c:\\users\\x1620\\desktop\\jackyprojct\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0mvc\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0mvc\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28ADAA14-029C-4F00-A4C7-D8A598702FA4}|\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC.csproj|solutionrelative:\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0mvc\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28ADAA14-029C-4F00-A4C7-D8A598702FA4}|\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC.csproj|c:\\users\\x1620\\desktop\\jackyprojct\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0mvc\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0mvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28ADAA14-029C-4F00-A4C7-D8A598702FA4}|\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC.csproj|solutionrelative:\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0mvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{28ADAA14-029C-4F00-A4C7-D8A598702FA4}|\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC.csproj|c:\\users\\x1620\\desktop\\jackyprojct\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0mvc\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0mvc\\views\\posts\\newsfeed.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{28ADAA14-029C-4F00-A4C7-D8A598702FA4}|\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC.csproj|solutionrelative:\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0mvc\\views\\posts\\newsfeed.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28ADAA14-029C-4F00-A4C7-D8A598702FA4}|\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC.csproj|c:\\users\\x1620\\desktop\\jackyprojct\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0mvc\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0mvc\\controllers\\postsapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28ADAA14-029C-4F00-A4C7-D8A598702FA4}|\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC.csproj|solutionrelative:\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0mvc\\controllers\\postsapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28ADAA14-029C-4F00-A4C7-D8A598702FA4}|\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC.csproj|c:\\users\\x1620\\desktop\\jackyprojct\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0mvc\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0mvc\\views\\posts\\newsfeed.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{28ADAA14-029C-4F00-A4C7-D8A598702FA4}|\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC.csproj|solutionrelative:\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0mvc\\views\\posts\\newsfeed.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{28ADAA14-029C-4F00-A4C7-D8A598702FA4}|\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC.csproj|c:\\users\\x1620\\desktop\\jackyprojct\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0mvc\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0mvc\\controllers\\commentsapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28ADAA14-029C-4F00-A4C7-D8A598702FA4}|\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC.csproj|solutionrelative:\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0mvc\\controllers\\commentsapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,51 +35,38 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "CommentsApiController.cs",
+              "DocumentMoniker": "C:\\Users\\x1620\\Desktop\\JackyProjct\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\Controllers\\CommentsApiController.cs",
+              "RelativeDocumentMoniker": "\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\Controllers\\CommentsApiController.cs",
+              "ToolTip": "C:\\Users\\x1620\\Desktop\\JackyProjct\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\Controllers\\CommentsApiController.cs",
+              "RelativeToolTip": "\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\Controllers\\CommentsApiController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAwB8AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T12:04:37.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "PostsApiController.cs",
               "DocumentMoniker": "C:\\Users\\x1620\\Desktop\\JackyProjct\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\Controllers\\PostsApiController.cs",
               "RelativeDocumentMoniker": "\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\Controllers\\PostsApiController.cs",
               "ToolTip": "C:\\Users\\x1620\\Desktop\\JackyProjct\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\Controllers\\PostsApiController.cs",
               "RelativeToolTip": "\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\Controllers\\PostsApiController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAEkAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAA0wCIAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-14T11:28:24.371Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\x1620\\Desktop\\JackyProjct\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\x1620\\Desktop\\JackyProjct\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAwwBgAAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T08:13:55.9Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PostsController.cs",
-              "DocumentMoniker": "C:\\Users\\x1620\\Desktop\\JackyProjct\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\Controllers\\PostsController.cs",
-              "RelativeDocumentMoniker": "\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\Controllers\\PostsController.cs",
-              "ToolTip": "C:\\Users\\x1620\\Desktop\\JackyProjct\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\Controllers\\PostsController.cs",
-              "RelativeToolTip": "\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\Controllers\\PostsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAABAwAkAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T09:02:06.538Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "Newsfeed.cshtml",
               "DocumentMoniker": "C:\\Users\\x1620\\Desktop\\JackyProjct\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\Views\\Posts\\Newsfeed.cshtml",
               "RelativeDocumentMoniker": "\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\Views\\Posts\\Newsfeed.cshtml",
               "ToolTip": "C:\\Users\\x1620\\Desktop\\JackyProjct\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\Views\\Posts\\Newsfeed.cshtml",
               "RelativeToolTip": "\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC\\Views\\Posts\\Newsfeed.cshtml",
-              "ViewState": "AgIAAMkAAAAAAAAAAAAAAPUAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAGoBAAAAAAAAAAAAAFkBAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-12T06:06:44.96Z",
               "EditorCaption": ""

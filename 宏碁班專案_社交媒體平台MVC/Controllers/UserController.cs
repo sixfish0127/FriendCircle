@@ -206,7 +206,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
                                          new ClaimsPrincipal(claimsIdentity),
                                          authProperties);
                 //登入成功，重定向到首頁
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Newsfeed", "Posts");
             }
             else
             {

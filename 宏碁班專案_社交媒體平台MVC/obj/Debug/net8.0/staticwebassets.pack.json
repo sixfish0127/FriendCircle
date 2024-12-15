@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
+      "Id": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\css\\style2.css",
+      "PackagePath": "staticwebassets\\css\\style2.css"
+    },
+    {
       "Id": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\css\\themify-icons.css",
       "PackagePath": "staticwebassets\\css\\themify-icons.css"
     },
@@ -67,6 +71,10 @@
     {
       "Id": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\fonts\\themify.woff",
       "PackagePath": "staticwebassets\\fonts\\themify.woff"
+    },
+    {
+      "Id": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\28eae4c9-cc21-42de-bede-07b402f0ec1e.png",
+      "PackagePath": "staticwebassets\\images\\28eae4c9-cc21-42de-bede-07b402f0ec1e.png"
     },
     {
       "Id": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\2acaae86-ecb0-4c0c-a82b-ddaab1230a19.png",

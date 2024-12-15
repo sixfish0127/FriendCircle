@@ -17,23 +17,28 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
             _friendCircleContext = friendCircleContext;
         }
         [HttpGet]
-        public async Task<IActionResult> GetPosts()
+        public async Task<IActionResult> GetPosts(int page=1,int pageSize=10)
         {
+            if (page<1||pageSize<1) return BadRequest("Invalid page or pageSize");            
             var posts = await _friendCircleContext.Posts
                 .Include(p => p.User)
-                .OrderByDescending(p => p.CreatedAt)
+                .OrderBy(p => p.CreatedAt)
+                .Skip((page - 1) * pageSize)//跳過前面的資料
+                .Take(pageSize)//取得指定數量的資料
                 .Select(p => new
                 {
                     p.Id,
                     p.Content,
-                    p.CreatedAt,
+                    CreatedAt = p.CreatedAt.ToString("yyyy-MM-ddTHH:mm:ssZ"),//把時間轉換格式方便計算
                     user = p.User.name, // 替換為用戶名稱
                     image = p.User.userimage
                 })
                 .ToListAsync();
+            //確認是否有取得資料            
+            Console.WriteLine($"Page: {page}, PageSize: {pageSize}, Total Posts: {posts.Count}");
             foreach (var post in posts)
             {
-                Console.WriteLine($"Id: {post.Id}, Content: {post.Content}, User: {post.user}");
+                Console.WriteLine($"Id: {post.Id}, Content: {post.Content}, User: {post.user},CreatAt:{post.CreatedAt}");
             }
 
             return Ok(posts);
@@ -43,12 +48,12 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
         {
             if (ModelState.IsValid)
             {                
-                // 檢查用戶是否已經登入或NameIdentifier為空
-                var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
-                if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
-                {
-                    return Unauthorized("User is not authenticated.");
-                }
+                //// 檢查用戶是否已經登入或NameIdentifier為空
+                //var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+                //if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
+                //{
+                //    return Unauthorized("User is not authenticated.");
+                //}
                 // 從登入的用戶取得用戶 ID
                 var UserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value; 
                 post.UserId = int.Parse(UserId);

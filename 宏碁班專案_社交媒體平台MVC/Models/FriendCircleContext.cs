@@ -81,7 +81,6 @@ public partial class FriendCircleContext : DbContext
                 .HasConstraintName("FK_Comments_Comments");
 
             entity.HasOne(d => d.Post).WithMany(p => p.Comments)
-                .HasPrincipalKey(p => p.Id)
                 .HasForeignKey(d => d.PostId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Comments_Posts");
@@ -109,15 +108,14 @@ public partial class FriendCircleContext : DbContext
                 .HasForeignKey(d => d.UserId2)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_FriendShip_userInfo1");
-            entity.Property(f=>f.Status).HasConversion<int>();
         });
 
         modelBuilder.Entity<Posts>(entity =>
-        {            
+        {
             entity.Property(e => e.Content).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime");            
+                .HasColumnType("datetime");
 
             entity.HasOne(d => d.User).WithMany(p => p.Posts)
                 .HasForeignKey(d => d.UserId)
@@ -143,7 +141,6 @@ public partial class FriendCircleContext : DbContext
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_ReactionType_userInfo");
-            entity.Property(f => f.ReactionType1).HasConversion<int>();
         });
 
         modelBuilder.Entity<userInfo>(entity =>
