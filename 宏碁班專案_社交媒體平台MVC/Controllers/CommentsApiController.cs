@@ -74,7 +74,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
                 catch (DbUpdateException ex)
                 {
                     Console.WriteLine("Error occurred: " + ex.InnerException?.Message);
-                    throw; // 可选：重新抛出异常
+                    throw; //重新抛出異常
                 }
             }
             return BadRequest(ModelState);

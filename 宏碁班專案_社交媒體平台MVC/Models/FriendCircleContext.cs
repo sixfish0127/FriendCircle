@@ -125,17 +125,17 @@ public partial class FriendCircleContext : DbContext
 
         modelBuilder.Entity<ReactionType>(entity =>
         {
-            entity.HasKey(e => new { e.CommentId, e.UserId });
+            entity.HasKey(e => new { e.PostId, e.UserId });
 
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
             entity.Property(e => e.ReactionType1).HasColumnName("ReactionType");
 
-            entity.HasOne(d => d.Comment).WithMany(p => p.ReactionType)
-                .HasForeignKey(d => d.CommentId)
+            entity.HasOne(d => d.Post).WithMany(p => p.ReactionType)
+                .HasForeignKey(d => d.PostId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_ReactionType_Comments");
+                .HasConstraintName("FK_ReactionType_Posts");
 
             entity.HasOne(d => d.User).WithMany(p => p.ReactionType)
                 .HasForeignKey(d => d.UserId)

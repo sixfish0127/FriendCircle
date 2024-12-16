@@ -233,8 +233,20 @@
             })
             .catch(error => console.error('Error creating post:', error));
     });
+    // 切換留言顯示
+    function toggleComments(postId){
+        const commentsSection = document.getElementById(`comments-${postId}`);        
 
+        if(commentsSection.style.display==='none'|| commentsSection.style.display === ''){
+			//隱藏時顯示
+			commentsSection.style.display='block';			
+        }else{
+			//顯示時隱藏
+            commentsSection.style.display = 'none';
+        }
+    }
 
+    //新增貼文
     function addPostToContainer(container, post) {
         console.log('Adding post:', post); // 确认 post 对象是否正确
         const postDiv = document.createElement('div');
@@ -258,7 +270,7 @@
                         ${isLongContent?'<a href="#" class="fw-600 text-primary ms-2 see-more">See more</a>':''}                        
                     </div>
                     <div class="card-body d-flex p-0">
-                        <a href="#" class="emoji-bttn d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss me-2"><i class="feather-thumbs-up text-white bg-primary-gradiant me-1 btn-round-xs font-xss"></i> <i class="feather-heart text-white bg-red-gradiant me-2 btn-round-xs font-xss"></i>2.8K Like</a>
+                        <a href="#" class="emoji-bttn d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss me-2"><i class="feather-thumbs-up text-white bg-primary-gradiant me-1 btn-round-xs font-xss" onclick="addReaction(${post.id},0)"></i> <i class="feather-heart text-white bg-red-gradiant me-2 btn-round-xs font-xss" onclick="addReaction(${post.id},1)"></i><span id="reaction-count-${post.id}"></span></a>
                         <div class="emoji-wrap">
                             <ul class="emojis list-inline mb-0">
                                 <li class="emoji list-inline-item"><i class="em em---1"></i> </li>
@@ -271,7 +283,7 @@
                                 <li class="emoji list-inline-item"><i class="em em-full_moon_with_face"></i></li>
                             </ul>
                         </div>
-                        <a href="#" class="d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss"><i class="feather-message-circle text-dark text-grey-900 btn-round-sm font-lg"></i><span class="d-none-xss">22 Comment</span></a>
+                        <a href="#" class="d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss" onclick="toggleComments(${post.id})"><i class="feather-message-circle text-dark text-grey-900 btn-round-sm font-lg"></i><span class="d-none-xss" id="comment-count-${post.id}"></span></a>
                         <a href="#" id="dropdownMenu31" data-bs-toggle="dropdown" aria-expanded="false" class="ms-auto d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss"><i class="feather-share-2 text-grey-900 text-dark btn-round-sm font-lg"></i><span class="d-none-xs">Share</span></a>
                     <div class="dropdown-menu dropdown-menu-end p-4 rounded-xxl border-0 shadow-lg" aria-labelledby="dropdownMenu31">
                         <h4 class="fw-700 font-xss text-grey-900 d-flex align-items-center">Share <i class="feather-x ms-auto font-xssss btn-round-xs bg-greylight text-grey-900 me-2"></i></h4>
@@ -300,13 +312,15 @@
                 </div>               
             </div>
             <div class="comments-section">
-                <div class="comments-list" id="comments-${post.id}"></div>
-                <input type="text" id="comment-input-${post.id}" placeholder="Write a comment..." />
+                <div class="comments-list" id="comments-${post.id}"style="display:none;"></div>
+                <input type="text" id="comment-input-${post.id}" placeholder="請輸入您的留言..." />
                 <button onclick="addComment(${post.id})">留言</button>
             </div>
         </div>
             
         `;
+        // 加載反應數據
+        loadReaction(post.id);
         //將貼文加到容器最前面
         container.prepend(postDiv);
         //加載現有流言
@@ -328,6 +342,35 @@
 			});
         }
     }
+    // 加載更多貼文
+    function loadMorePosts(){
+        isLoading=true;//設置加載狀態
+        document.getElementById('loading').style.display = 'block';//顯示加載動畫
+
+        fetch(`/api/posts?page=${currentPage}&pageSize=${pageSize}`)
+            .then(response=>{
+                if(!response.ok) throw new Error('Failed to load posts');
+                return response.json();
+            })
+            .then(data=>{
+                console.log("API 返回的資料:", data); // 除錯用，確認 API 返回內容
+                currentUser = data.CurrentUser; // 儲存當前登入用戶名稱
+                if(data.length>0){
+                    const postsContainer = document.getElementById('posts-container');
+                    data.forEach(data=>addPostToContainer(postsContainer,data));
+                    currentPage++;
+                }else{
+                    console.log('No more posts to load');
+                    window.removeEventListener('scroll',loadMorePosts);
+                    document.getElementById('loading').innerText = '沒有更多貼文';
+                }
+            })
+            .catch(error=>console.error('Error fetching posts:',error))
+            .finally(()=>{
+                isLoading=false;//重置加載狀態
+                document.getElementById('loading').style.display = 'none';//隱藏加載動畫
+            });
+    }
     //載入留言
     function loadComments(postId){
         fetch(`/api/comments/${postId}`)
@@ -345,6 +388,10 @@
 					`;
                     commentsList.appendChild(commentDiv);
                 });
+                 // 更新留言數量
+                const commentCount = comments.length;
+                const commentCountElement = document.getElementById(`comment-count-${postId}`);
+                commentCountElement.innerText = `${commentCount} 則留言`;
             })
 			.catch(error=>console.error('Error fetching comments:',error));
     }
@@ -372,55 +419,73 @@
              const commentDiv = document.createElement('div');
              commentDiv.classList.add('comment');
              commentDiv.innerHTML = `
-                <p><strong>${comment.name}</strong>: ${comment.content} <small>${new Date(comment.CreatedAt).toLocaleString()}</small></p>
+                <p><img src="${comment.image}" class="shadow-sm rounded-circle w45"><strong>&nbsp;${comment.user}</strong>: ${comment.content} <small>${new Date(comment.createdAt).toLocaleString()}</small></p>
              `;
              commentsList.appendChild(commentDiv);
              input.value = ''; // 清空輸入框
+             // 更新留言數量
+             const commentCountElement = document.getElementById(`comment-count-${postId}`);
+             const currentCount = parseInt(commentCountElement.innerText) || 0;
+             commentCountElement.innerText = `${currentCount + 1} Comments`;
 		})
 		.catch(error=>console.error('Error adding comment:',error));
     }
-	// 加載更多貼文
-    function loadMorePosts(){
-        isLoading=true;//設置加載狀態
-		document.getElementById('loading').style.display = 'block';//顯示加載動畫
 
-        fetch(`/api/posts?page=${currentPage}&pageSize=${pageSize}`)
-            .then(response=>{
-				if(!response.ok) throw new Error('Failed to load posts');
-				return response.json();
+	//反應統計數量
+    function loadReaction(postId){
+		fetch(`/api/reactions/${postId}`)
+			.then(response=>response.json())
+			.then(reactions=>{
+				console.log('Reactions:',reactions);
+                const reactionCount = reactions.map(r => `${r.type}: ${formatNumber(r.count)}`).join(', ');
+                const reactionCountElement = document.getElementById(`reaction-count-${postId}`);
+                if(reactionCountElement){
+                    reactionCountElement.innerText = reactionCount || 'No reactions yet';
+                }else {
+                console.error(`Element with ID reaction-count-${postId} not found.`);
+            }
             })
-            .then(data=>{
-                console.log("API 返回的資料:", data); // 除錯用，確認 API 返回內容
-                currentUser = data.CurrentUser; // 儲存當前登入用戶名稱
-                if(data.length>0){
-					const postsContainer = document.getElementById('posts-container');
-					data.forEach(data=>addPostToContainer(postsContainer,data));
-					currentPage++;
-                }else{
-					console.log('No more posts to load');
-					window.removeEventListener('scroll',loadMorePosts);
-                    document.getElementById('loading').innerText = '沒有更多貼文';
-                }
+			.catch(error=>console.error('Error fetching reactions:',error));
+    }
+    //發送反應至後端
+    function addReaction(postId, reactionType){
+        fetch('/api/reactions',{
+			method:'POST',
+			headers:{'Content-Type':'application/json'},
+			body: JSON.stringify({
+                PostId: postId,				
+				ReactionType1: reactionType
             })
-            .catch(error=>console.error('Error fetching posts:',error))
-            .finally(()=>{
-				isLoading=false;//重置加載狀態
-				document.getElementById('loading').style.display = 'none';//隱藏加載動畫
-            });
+		})
+        .then(()=>{
+			// 更新反應數量
+			loadReaction(postId);
+        })
+		.catch(error=>console.error('Error adding reaction:',error));
     }
     //計算相對時間
     function calculateRelativeTime(postTime) {
-    const now = new Date();
-    const postDate = new Date(postTime); // 將 ISO 時間轉為 Date 物件
-    const diffMs = now - postDate; // 毫秒差異
-    const diffSec = Math.floor(diffMs / 1000); // 秒
-    const diffMin = Math.floor(diffSec / 60); // 分鐘
-    const diffHour = Math.floor(diffMin / 60); // 小時
-    const diffDay = Math.floor(diffHour / 24); // 天
+        const now = new Date();
+        const postDate = new Date(postTime); // 將 ISO 時間轉為 Date 物件
+        const diffMs = now - postDate; // 毫秒差異
+        const diffSec = Math.floor(diffMs / 1000); // 秒
+        const diffMin = Math.floor(diffSec / 60); // 分鐘
+        const diffHour = Math.floor(diffMin / 60); // 小時
+        const diffDay = Math.floor(diffHour / 24); // 天
 
-    if (diffSec < 60) return "剛剛";
-    if (diffMin < 60) return `${diffMin} 分鐘前`;
-    if (diffHour < 24) return `${diffHour} 小時前`;
-    return `${diffDay} 天前`;
+        if (diffSec < 60) return "剛剛";
+        if (diffMin < 60) return `${diffMin} 分鐘前`;
+        if (diffHour < 24) return `${diffHour} 小時前`;
+        return `${diffDay} 天前`;
+    }
+    //格式化數字函數
+    function formatNumber(num) {
+        if (num >= 1000000) {
+            return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M'; // 百萬 (1M)
+        } else if (num >= 1000) {
+            return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K'; // 千 (1K)
+        } else {
+            return num.toString(); // 小於 1000，顯示原始數字
+        }
     }
 </script>

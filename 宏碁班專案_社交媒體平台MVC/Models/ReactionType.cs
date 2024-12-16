@@ -2,21 +2,21 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace 宏碁班專案_社交媒體平台MVC.Models;
 
-
 public partial class ReactionType
 {
-    public int CommentId { get; set; }
+    public int PostId { get; set; }
 
     public int UserId { get; set; }
-
-    public CommentReactionType ReactionType1 { get; set; }
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public PostReactionType ReactionType1 { get; set; }
 
     public DateTime CreatedAt { get; set; }
 
-    public virtual Comments Comment { get; set; }
+    public virtual Posts Post { get; set; }
 
     public virtual userInfo User { get; set; }
 }

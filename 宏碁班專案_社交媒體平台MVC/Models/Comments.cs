@@ -31,7 +31,5 @@ public partial class Comments
 
     public virtual Posts Post { get; set; }
 
-    public virtual ICollection<ReactionType> ReactionType { get; set; } = new List<ReactionType>();
-
     public virtual userInfo User { get; set; }
 }

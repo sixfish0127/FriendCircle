@@ -17,5 +17,7 @@ public partial class Posts
 
     public virtual ICollection<Comments> Comments { get; set; } = new List<Comments>();
 
+    public virtual ICollection<ReactionType> ReactionType { get; set; } = new List<ReactionType>();
+
     public virtual userInfo User { get; set; }
 }
