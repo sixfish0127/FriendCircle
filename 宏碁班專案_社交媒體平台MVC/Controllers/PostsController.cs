@@ -1,4 +1,5 @@
 ﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
@@ -6,6 +7,7 @@ using 宏碁班專案_社交媒體平台MVC.Models;
 
 namespace 宏碁班專案_社交媒體平台MVC.Controllers
 {
+    [Authorize]
     public class PostsController : Controller
     {
         private readonly ILogger<PostsController> _logger;

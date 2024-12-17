@@ -29,7 +29,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
                 {
                     p.Id,
                     p.Content,
-                    CreatedAt = p.CreatedAt.ToString("yyyy-MM-ddTHH:mm:ssZ"),//把時間轉換格式方便計算
+                    CreatedAt = p.CreatedAt.ToString("yyyy-MM-ddTHH:mm:ss"),//把時間轉換格式方便計算
                     user = p.User.name, // 替換為用戶名稱
                     image = p.User.userimage
                 })

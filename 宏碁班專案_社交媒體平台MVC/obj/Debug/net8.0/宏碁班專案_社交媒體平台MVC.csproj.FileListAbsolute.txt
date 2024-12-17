@@ -173,3 +173,7 @@ C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁�
 C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁班專案_社交媒體平台MVC\bin\Debug\net8.0\efpt.config.json
 C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁班專案_社交媒體平台MVC\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁班專案_社交媒體平台MVC\obj\Debug\net8.0\宏碁班專案_社交媒體平台MVC.sourcelink.json
+C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁班專案_社交媒體平台MVC\bin\Debug\net8.0\SixLabors.ImageSharp.dll
+C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁班專案_社交媒體平台MVC\bin\Debug\net8.0\SixLabors.Fonts.dll
+C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁班專案_社交媒體平台MVC\bin\Debug\net8.0\SixLabors.ImageSharp.Drawing.dll
+C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁班專案_社交媒體平台MVC\bin\Debug\net8.0\libman.json

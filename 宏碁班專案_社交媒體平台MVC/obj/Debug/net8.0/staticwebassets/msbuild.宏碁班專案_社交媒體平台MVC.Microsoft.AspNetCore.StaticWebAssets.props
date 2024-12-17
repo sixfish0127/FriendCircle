@@ -342,6 +342,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\2acaae86-ecb0-4c0c-a82b-ddaab1230a19.png'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\4ea1e52f-3e88-4bbc-8180-555398f23a34.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>宏碁班專案_社交媒體平台MVC</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/宏碁班專案_社交媒體平台MVC</BasePath>
+      <RelativePath>images/4ea1e52f-3e88-4bbc-8180-555398f23a34.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>e4izkpr5c3</Fingerprint>
+      <Integrity>gjGmWR3F3Iz1t4x6MsvmJeaHb4EwxoXI42L1ILfgbAU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\4ea1e52f-3e88-4bbc-8180-555398f23a34.png'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\b-10.png'))">
       <SourceType>Package</SourceType>
       <SourceId>宏碁班專案_社交媒體平台MVC</SourceId>
@@ -449,24 +467,6 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\bb-9.jpg'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\bf998465-143c-4fce-931e-0ad958e687d7.png'))">
-      <SourceType>Package</SourceType>
-      <SourceId>宏碁班專案_社交媒體平台MVC</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/宏碁班專案_社交媒體平台MVC</BasePath>
-      <RelativePath>images/bf998465-143c-4fce-931e-0ad958e687d7.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>w3d4euok34</Fingerprint>
-      <Integrity>pF4NmHxVlhyYJsDI3xbzJztgop8leaZaZ81OhzJmclA=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\bf998465-143c-4fce-931e-0ad958e687d7.png'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\bg-2.png'))">
       <SourceType>Package</SourceType>

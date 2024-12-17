@@ -18,7 +18,23 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
             _dbManager = dbManager;
             _friendCircleContext = friendCircleContext;
         }
-       
+        public IActionResult Member()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult EditAbout()
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var user = _dbManager.getUserById(int.Parse(userId));
+
+            if (user == null)
+            {
+                return NotFound("無法找到使用者資訊。");
+            }
+
+            return View(user); // 將使用者資訊傳遞到 View
+        }
         public IActionResult Details()
         {
             var userName = User.Identity.Name;

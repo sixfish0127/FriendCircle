@@ -35,8 +35,8 @@
                         <a href="#" class=" font-xssss fw-600 text-grey-500 card-body p-0 d-flex align-items-center"><i class="btn-round-sm font-xs text-primary feather-edit-3 me-2 bg-greylight"></i>Create Post</a>
                     </div>
                     <div class="card-body p-0 mt-3 position-relative">
-                        <figure class="avatar position-absolute ms-2 mt-1 top-5"><img src="@Model.userimage" alt="image" class="shadow-sm rounded-circle w30"></figure>
-                        <textarea id="post-input" name="message" class="h100 bor-0 w-100 rounded-xxl p-2 ps-5 font-xssss text-500 fw-500 border-light-md theme-dark-bg" cols="30" rows="10" placeholder="輸入你的貼文"></textarea>
+                        <figure class="position-absolute ms-2 mt-1 top-5"><img src="@Model.userimage" alt="image" class="shadow-sm rounded-circle w30"></figure>
+                        <textarea id="post-input" name="message" class="h100 bor-0 w-100 rounded-xxl p-2 ps-5 ps-lg-7 font-xssss text-500 fw-500 border-light-md theme-dark-bg" cols="30" rows="10" placeholder="輸入你的貼文"></textarea>
                     </div>
                     <div class="card-body d-flex p-0 mt-0">
                         <a href="#" class="d-flex align-items-center font-xssss fw-600 ls-1 text-grey-700 text-dark pe-4"><i class="font-md text-danger feather-video me-2"></i><span class="d-none-xs">Live Video</span></a>
@@ -64,7 +64,7 @@
                 <div class="card w-100 shadow-xss rounded-xxl border-0 mb-3">
                     <div class="card-body d-flex align-items-center p-4">
                         <h4 class="fw-700 mb-0 font-xssss text-grey-900">Friend Request</h4>
-                        <a href="default-member.html" class="fw-600 ms-auto font-xssss text-primary">See all</a>
+                        <a href="@Url.Action("Member","Home")" class="fw-600 ms-auto font-xssss text-primary">See all</a>
                     </div>
                     <div class="card-body d-flex pt-4 ps-4 pe-4 pb-0 border-top-xs bor-0">
                         <figure class="avatar me-3"><img src="/images/user-7.png" alt="image" class="shadow-sm rounded-circle w45"></figure>
@@ -97,7 +97,7 @@
                 <div class="card w-100 shadow-xss rounded-xxl border-0 p-0 ">
                     <div class="card-body d-flex align-items-center p-4 mb-0">
                         <h4 class="fw-700 mb-0 font-xssss text-grey-900">Confirm Friend</h4>
-                        <a href="default-member.html" class="fw-600 ms-auto font-xssss text-primary">See all</a>
+                        <a href="@Url.Action("Member","Home")" class="fw-600 ms-auto font-xssss text-primary">See all</a>
                     </div>
                     <div class="card-body bg-transparent-card d-flex p-3 bg-greylight ms-3 me-3 rounded-3">
                         <figure class="avatar me-2 mb-0"><img src="/images/user-7.png" alt="image" class="shadow-sm rounded-circle w45"></figure>
@@ -205,7 +205,7 @@
         window.addEventListener("scroll",()=>{
 			if(isLoading) return;
             //當滾動接近頁面底部時觸發
-			if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 100){
+			if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 500){
 				loadMorePosts();
 			}
         });
@@ -234,9 +234,9 @@
             .catch(error => console.error('Error creating post:', error));
     });
     // 切換留言顯示
-    function toggleComments(postId){
+    function toggleComments(event,postId){
         const commentsSection = document.getElementById(`comments-${postId}`);        
-
+        event.preventDefault(); // 防止預設行為
         if(commentsSection.style.display==='none'|| commentsSection.style.display === ''){
 			//隱藏時顯示
 			commentsSection.style.display='block';			
@@ -270,7 +270,7 @@
                         ${isLongContent?'<a href="#" class="fw-600 text-primary ms-2 see-more">See more</a>':''}                        
                     </div>
                     <div class="card-body d-flex p-0">
-                        <a href="#" class="emoji-bttn d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss me-2"><i class="feather-thumbs-up text-white bg-primary-gradiant me-1 btn-round-xs font-xss" onclick="addReaction(${post.id},0)"></i> <i class="feather-heart text-white bg-red-gradiant me-2 btn-round-xs font-xss" onclick="addReaction(${post.id},1)"></i><span id="reaction-count-${post.id}"></span></a>
+                        <a href="#" class="emoji-bttn d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss me-2"><i class="feather-thumbs-up text-white bg-primary-gradiant me-1 btn-round-xs font-xss" onclick="addReaction(event,${post.id},0)"></i> <i class="feather-heart text-white bg-red-gradiant me-2 btn-round-xs font-xss" onclick="addReaction(event,${post.id},1)"></i><span id="reaction-count-${post.id}"></span></a>
                         <div class="emoji-wrap">
                             <ul class="emojis list-inline mb-0">
                                 <li class="emoji list-inline-item"><i class="em em---1"></i> </li>
@@ -283,7 +283,7 @@
                                 <li class="emoji list-inline-item"><i class="em em-full_moon_with_face"></i></li>
                             </ul>
                         </div>
-                        <a href="#" class="d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss" onclick="toggleComments(${post.id})"><i class="feather-message-circle text-dark text-grey-900 btn-round-sm font-lg"></i><span class="d-none-xss" id="comment-count-${post.id}"></span></a>
+                        <a href="#" class="d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss" onclick="toggleComments(event,${post.id})"><i class="feather-message-circle text-dark text-grey-900 btn-round-sm font-lg"></i><span class="d-none-xss" id="comment-count-${post.id}"></span></a>
                         <a href="#" id="dropdownMenu31" data-bs-toggle="dropdown" aria-expanded="false" class="ms-auto d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss"><i class="feather-share-2 text-grey-900 text-dark btn-round-sm font-lg"></i><span class="d-none-xs">Share</span></a>
                     <div class="dropdown-menu dropdown-menu-end p-4 rounded-xxl border-0 shadow-lg" aria-labelledby="dropdownMenu31">
                         <h4 class="fw-700 font-xss text-grey-900 d-flex align-items-center">Share <i class="feather-x ms-auto font-xssss btn-round-xs bg-greylight text-grey-900 me-2"></i></h4>
@@ -314,7 +314,7 @@
             <div class="comments-section">
                 <div class="comments-list" id="comments-${post.id}"style="display:none;"></div>
                 <input type="text" id="comment-input-${post.id}" placeholder="請輸入您的留言..." />
-                <button onclick="addComment(${post.id})">留言</button>
+                <button onclick="addComment(event,${post.id})">留言</button>
             </div>
         </div>
             
@@ -372,7 +372,7 @@
             });
     }
     //載入留言
-    function loadComments(postId){
+    function loadComments(postId){        
         fetch(`/api/comments/${postId}`)
 			.then(response=>response.json())
             .then(comments=>{
@@ -397,12 +397,13 @@
     }
 
 	//新增留言
-	function addComment(postId){
+	function addComment(event,postId){
+        event.preventDefault(); // 防止預設行為
         const input = document.getElementById(`comment-input-${postId}`);
         const content = input.value.trim();
 		console.log('Adding comment:',postId);
 		if(!content) return alert('輸入留言未輸入');
-
+        
         fetch('/api/comments',{
 			method:'POST',
 			headers:{'Content-Type':'application/json'},
@@ -448,7 +449,8 @@
 			.catch(error=>console.error('Error fetching reactions:',error));
     }
     //發送反應至後端
-    function addReaction(postId, reactionType){
+    function addReaction(event,postId, reactionType){
+        event.preventDefault(); // 防止預設行為
         fetch('/api/reactions',{
 			method:'POST',
 			headers:{'Content-Type':'application/json'},
@@ -467,11 +469,11 @@
     function calculateRelativeTime(postTime) {
         const now = new Date();
         const postDate = new Date(postTime); // 將 ISO 時間轉為 Date 物件
-        const diffMs = now - postDate; // 毫秒差異
+        const diffMs = now.getTime() - postDate.getTime(); // 毫秒差異
         const diffSec = Math.floor(diffMs / 1000); // 秒
         const diffMin = Math.floor(diffSec / 60); // 分鐘
         const diffHour = Math.floor(diffMin / 60); // 小時
-        const diffDay = Math.floor(diffHour / 24); // 天
+        const diffDay = Math.floor(diffHour / 24); // 天         
 
         if (diffSec < 60) return "剛剛";
         if (diffMin < 60) return `${diffMin} 分鐘前`;

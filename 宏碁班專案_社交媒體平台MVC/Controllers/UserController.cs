@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using 宏碁班專案_社交媒體平台MVC.Models;
 using Microsoft.AspNetCore.Authorization;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Processing;
+
 
 namespace 宏碁班專案_社交媒體平台MVC.Controllers
 {
@@ -18,7 +21,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
             _logger = logger;
             _dbManager = dbManager;
             _webHostEnvironment = webHostEnvironment;
-        }
+        }        
         public IActionResult AccountInfo()
         {            
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -104,12 +107,16 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
             }
             // 產生唯一檔名
             var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
-            var filePath = Path.Combine(uploadsFolder, uniqueFileName);           
-            // 保存文件到 wwwroot/images
-            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+            // 使用 SixLabors.ImageSharp 套件處理圖片
+            using (var stream = file.OpenReadStream())
+            using (var image = Image.Load(stream))
             {
-                await file.CopyToAsync(fileStream);
-            }
+                // 調整圖片大小至指定寬高，例如 300x300
+                image.Mutate(x => x.Resize(200, 200));                
+                // 儲存圖片
+                image.Save(filePath);
+            }            
             // 將圖片連結保存到資料庫
             user.userimage = $"/images/{uniqueFileName}";
             _dbManager.UpdateUser(user);          

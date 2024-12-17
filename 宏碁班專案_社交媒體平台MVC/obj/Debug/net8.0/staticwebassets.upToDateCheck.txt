@@ -17,13 +17,13 @@ wwwroot\fonts\themify.ttf
 wwwroot\fonts\themify.woff
 wwwroot\images\28eae4c9-cc21-42de-bede-07b402f0ec1e.png
 wwwroot\images\2acaae86-ecb0-4c0c-a82b-ddaab1230a19.png
+wwwroot\images\4ea1e52f-3e88-4bbc-8180-555398f23a34.png
 wwwroot\images\b-10.png
 wwwroot\images\b-14.png
 wwwroot\images\b-17.png
 wwwroot\images\b-9.png
 wwwroot\images\bb-16.png
 wwwroot\images\bb-9.jpg
-wwwroot\images\bf998465-143c-4fce-931e-0ad958e687d7.png
 wwwroot\images\bg-2.png
 wwwroot\images\bg-43.png
 wwwroot\images\challenge-medal.svg

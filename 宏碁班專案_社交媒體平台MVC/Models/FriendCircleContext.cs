@@ -111,8 +111,7 @@ public partial class FriendCircleContext : DbContext
         });
 
         modelBuilder.Entity<Posts>(entity =>
-        {
-            entity.Property(e => e.Content).HasDefaultValueSql("(getdate())");
+        {            
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
