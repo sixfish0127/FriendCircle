@@ -20,8 +20,8 @@ public partial class userInfo
     public string userimage { get; set; }
 
     public string birthday { get; set; }
-
-    public int? phone { get; set; }
+    [RegularExpression(@"^09\d{8}$", ErrorMessage = "無效的電話號碼")]
+    public string phone { get; set; }
 
     public string address { get; set; }
 

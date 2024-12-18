@@ -163,7 +163,7 @@ public partial class FriendCircleContext : DbContext
             entity.Property(e => e.password)
                 .IsRequired()
                 .HasMaxLength(50)
-                .IsUnicode(false);
+                .IsUnicode(false);            
             entity.Property(e => e.userimage)
                 .HasMaxLength(50)
                 .IsUnicode(false);

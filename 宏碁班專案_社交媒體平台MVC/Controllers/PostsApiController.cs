@@ -1,8 +1,6 @@
 ﻿using System.Security.Claims;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
 using 宏碁班專案_社交媒體平台MVC.Models;
 
 namespace 宏碁班專案_社交媒體平台MVC.Controllers
@@ -17,21 +15,31 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
             _friendCircleContext = friendCircleContext;
         }
         [HttpGet]
-        public async Task<IActionResult> GetPosts(int page=1,int pageSize=10)
+        public async Task<IActionResult> GetPosts(int page=1,int pageSize=10,bool userOnly = false)
         {
-            if (page<1||pageSize<1) return BadRequest("Invalid page or pageSize");            
-            var posts = await _friendCircleContext.Posts
+            if (page<1||pageSize<1) return BadRequest("無效的請求");
+
+            var query = _friendCircleContext.Posts
                 .Include(p => p.User)
-                .OrderBy(p => p.CreatedAt)
+                .OrderBy(p => p.CreatedAt);
+
+            // 如果需要過濾只顯示當前使用者的貼文
+            if (userOnly)
+            {
+                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;                
+                query = query.Where(p => p.UserId == int.Parse(userId))
+                 .OrderBy(p => p.CreatedAt); // 重新排序
+            }
+            var posts = await query                                
                 .Skip((page - 1) * pageSize)//跳過前面的資料
                 .Take(pageSize)//取得指定數量的資料
                 .Select(p => new
                 {
                     p.Id,
                     p.Content,
-                    CreatedAt = p.CreatedAt.ToString("yyyy-MM-ddTHH:mm:ss"),//把時間轉換格式方便計算
-                    user = p.User.name, // 替換為用戶名稱
-                    image = p.User.userimage
+                    CreatedAt = p.CreatedAt.ToString("yyyy-MM-ddTHH:mm:ss"),
+                    user = p.User != null ? p.User.name : "Unknown User",
+                    image = p.User != null ? p.User.userimage : "/images/default.png"
                 })
                 .ToListAsync();
             //確認是否有取得資料            

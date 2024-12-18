@@ -46,6 +46,7 @@
                                 <div class="form-group">
                                     <label class="mont-font fw-600 font-xsss">Phone</label>
                                     <input type="text" class="form-control" name="phone" value="@Model.phone">
+                                    @Html.ValidationMessage("phone", "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </div>

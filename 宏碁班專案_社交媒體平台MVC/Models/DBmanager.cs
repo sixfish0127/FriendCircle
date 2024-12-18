@@ -1,4 +1,6 @@
-﻿namespace 宏碁班專案_社交媒體平台MVC.Models
+﻿using Microsoft.Extensions.Hosting;
+
+namespace 宏碁班專案_社交媒體平台MVC.Models
 {
     public class DBmanager
     {
@@ -56,6 +58,14 @@
         {
             _friendCircleContext.userInfo.Update(user);
             _friendCircleContext.SaveChanges();
+        }
+        // 取得用戶的貼文
+        public List<Posts> GetPostsByUserId(int userId)
+        {
+            return _friendCircleContext.Posts
+                .Where(p => p.UserId == userId)
+                .OrderByDescending(p => p.CreatedAt)
+                .ToList();
         }
     }
 }

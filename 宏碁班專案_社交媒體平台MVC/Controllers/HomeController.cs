@@ -39,8 +39,10 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
         {
             var userName = User.Identity.Name;
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            var user = _dbManager.getUserById(int.Parse(userId));            
-            return View(user);           
+            var user = _dbManager.getUserById(int.Parse(userId));
+            
+
+            return View(user);
         }
         [HttpPost]
         public IActionResult UpdateUser(userInfo user)
