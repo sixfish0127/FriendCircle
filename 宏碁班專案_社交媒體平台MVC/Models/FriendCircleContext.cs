@@ -21,6 +21,8 @@ public partial class FriendCircleContext : DbContext
 
     public virtual DbSet<FriendShip> FriendShip { get; set; }
 
+    public virtual DbSet<Notifications> Notifications { get; set; }
+
     public virtual DbSet<Posts> Posts { get; set; }
 
     public virtual DbSet<ReactionType> ReactionType { get; set; }
@@ -110,8 +112,26 @@ public partial class FriendCircleContext : DbContext
                 .HasConstraintName("FK_FriendShip_userInfo1");
         });
 
+        modelBuilder.Entity<Notifications>(entity =>
+        {
+            entity.Property(e => e.CreatAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.Message).IsRequired();
+
+            entity.HasOne(d => d.Comment).WithMany(p => p.Notifications)
+                .HasForeignKey(d => d.CommentId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Notifications_Comments");
+
+            entity.HasOne(d => d.User).WithMany(p => p.Notifications)
+                .HasForeignKey(d => d.UserId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Notifications_userInfo");
+        });
+
         modelBuilder.Entity<Posts>(entity =>
-        {            
+        {
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
@@ -163,10 +183,12 @@ public partial class FriendCircleContext : DbContext
             entity.Property(e => e.password)
                 .IsRequired()
                 .HasMaxLength(50)
-                .IsUnicode(false);            
+                .IsUnicode(false);
+            entity.Property(e => e.phone).HasMaxLength(50);
             entity.Property(e => e.userimage)
                 .HasMaxLength(50)
-                .IsUnicode(false);
+                .IsUnicode(false)
+                .HasDefaultValue("/images/Default.jpg");
         });
 
         OnModelCreatingPartial(modelBuilder);

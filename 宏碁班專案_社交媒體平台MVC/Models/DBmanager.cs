@@ -1,11 +1,12 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 
 namespace 宏碁班專案_社交媒體平台MVC.Models
 {
     public class DBmanager
     {
         //建立FriendCircleContext物件，連接資料庫
-        private readonly FriendCircleContext _friendCircleContext;
+        private readonly FriendCircleContext _friendCircleContext;        
         public DBmanager(FriendCircleContext friendCircleContext)
         {
             _friendCircleContext = friendCircleContext;
@@ -67,5 +68,17 @@ namespace 宏碁班專案_社交媒體平台MVC.Models
                 .OrderByDescending(p => p.CreatedAt)
                 .ToList();
         }
+        //取得貼文者ID
+        public int GetPostOwnerId(int postId)
+        {
+            // 查詢資料庫中的 Posts 表，找到該貼文的擁有者 ID
+            var postOwnerId = _friendCircleContext.Posts
+                .Where(p => p.Id == postId)
+                .Select(p => p.UserId) // 選擇貼文的作者 ID
+                .FirstOrDefault();
+           
+            return postOwnerId;
+        }
+
     }
 }

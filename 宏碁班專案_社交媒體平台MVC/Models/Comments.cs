@@ -27,6 +27,8 @@ public partial class Comments
 
     public virtual ICollection<Comments> InverseParenComment { get; set; } = new List<Comments>();
 
+    public virtual ICollection<Notifications> Notifications { get; set; } = new List<Notifications>();
+
     public virtual Comments ParenComment { get; set; }
 
     public virtual Posts Post { get; set; }

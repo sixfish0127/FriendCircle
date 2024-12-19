@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("宏碁班專案_社交媒體平台MVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+647ffd2805b283709d837de10e13c8a4dc6b73cc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2cb733aa0981a636d717095059dc9c318c75f2d6")]
 [assembly: System.Reflection.AssemblyProductAttribute("宏碁班專案_社交媒體平台MVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("宏碁班專案_社交媒體平台MVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

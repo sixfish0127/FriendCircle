@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "640+goQT6381fL8fGbxvvXvJvcwc2hk0pT0pDDRuntE=",
+  "Hash": "Tcan+kvIwNv9BAU8I6ueS9GblhYiMLykT6y9zKTHGkU=",
   "Source": "宏碁班專案_社交媒體平台MVC",
   "BasePath": "_content/宏碁班專案_社交媒體平台MVC",
   "Mode": "Default",
@@ -416,6 +416,27 @@
       "OriginalItemSpec": "wwwroot\\fonts\\themify.woff"
     },
     {
+      "Identity": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\06cefe59-ed8f-4b72-bea3-cb0317cd9906.png",
+      "SourceId": "宏碁班專案_社交媒體平台MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\",
+      "BasePath": "_content/宏碁班專案_社交媒體平台MVC",
+      "RelativePath": "images/06cefe59-ed8f-4b72-bea3-cb0317cd9906#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gxie65t7wj",
+      "Integrity": "VOEtlcFxzCZFwJp+58PRCR52S5YMLiWt5HL/rsRxxm8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\06cefe59-ed8f-4b72-bea3-cb0317cd9906.png"
+    },
+    {
       "Identity": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\28eae4c9-cc21-42de-bede-07b402f0ec1e.png",
       "SourceId": "宏碁班專案_社交媒體平台MVC",
       "SourceType": "Discovered",
@@ -456,27 +477,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\2acaae86-ecb0-4c0c-a82b-ddaab1230a19.png"
-    },
-    {
-      "Identity": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\4ea1e52f-3e88-4bbc-8180-555398f23a34.png",
-      "SourceId": "宏碁班專案_社交媒體平台MVC",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\",
-      "BasePath": "_content/宏碁班專案_社交媒體平台MVC",
-      "RelativePath": "images/4ea1e52f-3e88-4bbc-8180-555398f23a34#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "e4izkpr5c3",
-      "Integrity": "gjGmWR3F3Iz1t4x6MsvmJeaHb4EwxoXI42L1ILfgbAU=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\4ea1e52f-3e88-4bbc-8180-555398f23a34.png"
     },
     {
       "Identity": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\b-10.png",
@@ -729,6 +729,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\coming-soon.png"
+    },
+    {
+      "Identity": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\dae5b258-90e6-4be9-b579-5a21df2fe2f8.png",
+      "SourceId": "宏碁班專案_社交媒體平台MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\",
+      "BasePath": "_content/宏碁班專案_社交媒體平台MVC",
+      "RelativePath": "images/dae5b258-90e6-4be9-b579-5a21df2fe2f8#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gxie65t7wj",
+      "Integrity": "VOEtlcFxzCZFwJp+58PRCR52S5YMLiWt5HL/rsRxxm8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\dae5b258-90e6-4be9-b579-5a21df2fe2f8.png"
+    },
+    {
+      "Identity": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\Default.jpg",
+      "SourceId": "宏碁班專案_社交媒體平台MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\",
+      "BasePath": "_content/宏碁班專案_社交媒體平台MVC",
+      "RelativePath": "images/Default#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "fbpsl6wprs",
+      "Integrity": "K7wvbRO+ito1AT/Igv6BHcET19iCrK3Y6y+EykPgaSg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Default.jpg"
     },
     {
       "Identity": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\download1.png",
@@ -6705,6 +6747,88 @@
       ]
     },
     {
+      "Route": "images/06cefe59-ed8f-4b72-bea3-cb0317cd9906.gxie65t7wj.png",
+      "AssetFile": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\06cefe59-ed8f-4b72-bea3-cb0317cd9906.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "76897"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VOEtlcFxzCZFwJp+58PRCR52S5YMLiWt5HL/rsRxxm8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Dec 2024 11:42:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gxie65t7wj"
+        },
+        {
+          "Name": "label",
+          "Value": "images/06cefe59-ed8f-4b72-bea3-cb0317cd9906.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-VOEtlcFxzCZFwJp+58PRCR52S5YMLiWt5HL/rsRxxm8="
+        }
+      ]
+    },
+    {
+      "Route": "images/06cefe59-ed8f-4b72-bea3-cb0317cd9906.png",
+      "AssetFile": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\06cefe59-ed8f-4b72-bea3-cb0317cd9906.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "76897"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VOEtlcFxzCZFwJp+58PRCR52S5YMLiWt5HL/rsRxxm8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Dec 2024 11:42:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-VOEtlcFxzCZFwJp+58PRCR52S5YMLiWt5HL/rsRxxm8="
+        }
+      ]
+    },
+    {
       "Route": "images/28eae4c9-cc21-42de-bede-07b402f0ec1e.png",
       "AssetFile": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\28eae4c9-cc21-42de-bede-07b402f0ec1e.png",
       "Selectors": [],
@@ -6865,88 +6989,6 @@
         {
           "Name": "integrity",
           "Value": "sha256-8Mg49CtzuhleLTMYX3zTGJgZ7zMF4s3IWcpmAwD1aGk="
-        }
-      ]
-    },
-    {
-      "Route": "images/4ea1e52f-3e88-4bbc-8180-555398f23a34.e4izkpr5c3.png",
-      "AssetFile": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\4ea1e52f-3e88-4bbc-8180-555398f23a34.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "101779"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"gjGmWR3F3Iz1t4x6MsvmJeaHb4EwxoXI42L1ILfgbAU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 17 Dec 2024 12:33:33 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "e4izkpr5c3"
-        },
-        {
-          "Name": "label",
-          "Value": "images/4ea1e52f-3e88-4bbc-8180-555398f23a34.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-gjGmWR3F3Iz1t4x6MsvmJeaHb4EwxoXI42L1ILfgbAU="
-        }
-      ]
-    },
-    {
-      "Route": "images/4ea1e52f-3e88-4bbc-8180-555398f23a34.png",
-      "AssetFile": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\4ea1e52f-3e88-4bbc-8180-555398f23a34.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "101779"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"gjGmWR3F3Iz1t4x6MsvmJeaHb4EwxoXI42L1ILfgbAU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 17 Dec 2024 12:33:33 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-gjGmWR3F3Iz1t4x6MsvmJeaHb4EwxoXI42L1ILfgbAU="
         }
       ]
     },
@@ -7931,6 +7973,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-Sr561Y/8lhRhBwJTyGhFGgSP6ws2lDA/U7mMyzO0tGs="
+        }
+      ]
+    },
+    {
+      "Route": "images/dae5b258-90e6-4be9-b579-5a21df2fe2f8.gxie65t7wj.png",
+      "AssetFile": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\dae5b258-90e6-4be9-b579-5a21df2fe2f8.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "76897"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VOEtlcFxzCZFwJp+58PRCR52S5YMLiWt5HL/rsRxxm8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Dec 2024 11:12:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gxie65t7wj"
+        },
+        {
+          "Name": "label",
+          "Value": "images/dae5b258-90e6-4be9-b579-5a21df2fe2f8.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-VOEtlcFxzCZFwJp+58PRCR52S5YMLiWt5HL/rsRxxm8="
+        }
+      ]
+    },
+    {
+      "Route": "images/dae5b258-90e6-4be9-b579-5a21df2fe2f8.png",
+      "AssetFile": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\dae5b258-90e6-4be9-b579-5a21df2fe2f8.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "76897"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VOEtlcFxzCZFwJp+58PRCR52S5YMLiWt5HL/rsRxxm8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Dec 2024 11:12:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-VOEtlcFxzCZFwJp+58PRCR52S5YMLiWt5HL/rsRxxm8="
+        }
+      ]
+    },
+    {
+      "Route": "images/Default.fbpsl6wprs.jpg",
+      "AssetFile": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\Default.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16213"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"K7wvbRO+ito1AT/Igv6BHcET19iCrK3Y6y+EykPgaSg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Dec 2024 11:49:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fbpsl6wprs"
+        },
+        {
+          "Name": "label",
+          "Value": "images/Default.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-K7wvbRO+ito1AT/Igv6BHcET19iCrK3Y6y+EykPgaSg="
+        }
+      ]
+    },
+    {
+      "Route": "images/Default.jpg",
+      "AssetFile": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\Default.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16213"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"K7wvbRO+ito1AT/Igv6BHcET19iCrK3Y6y+EykPgaSg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Dec 2024 11:49:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-K7wvbRO+ito1AT/Igv6BHcET19iCrK3Y6y+EykPgaSg="
         }
       ]
     },

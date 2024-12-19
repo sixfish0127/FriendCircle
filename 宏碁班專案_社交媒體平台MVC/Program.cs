@@ -13,6 +13,10 @@ builder.Services.AddDbContext<FriendCircleContext>(options =>
 
 // 添加 DBmanager
 builder.Services.AddScoped<DBmanager>();
+// 註冊 IHttpClientFactory
+builder.Services.AddHttpClient();
+// 註冊 NotificationService
+builder.Services.AddScoped<NotificationService>();
 
 // 添加身份驗證服務
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)

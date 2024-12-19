@@ -12,9 +12,13 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
     public class CommentsApiController : ControllerBase
     {
         private readonly FriendCircleContext _context;
-        public CommentsApiController(FriendCircleContext context)
+        private readonly DBmanager _dbManager;
+        private readonly NotificationService _notificationService;
+        public CommentsApiController(FriendCircleContext context,DBmanager dbManager, NotificationService notificationService)
         {
             _context = context;
+            _dbManager = dbManager;
+            _notificationService = notificationService;
         }
         // 取得貼文的所有留言
         [HttpGet("{postId}")]
@@ -45,6 +49,8 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
                 // 從登入的用戶取得用戶 ID
                 var UserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
                 comment.UserId = int.Parse(UserId);
+                // 從貼文 ID 取得貼文擁有者 ID
+                var postOwnerId = _dbManager.GetPostOwnerId(comment.PostId);               
                 // 從用戶 ID 取得用戶名稱
                 var userName = await _context.userInfo
                     .Where(u => u.id == comment.UserId)
@@ -57,11 +63,18 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
                     .FirstOrDefaultAsync();
                 // 設定貼文的建立時間
                 comment.CreatedAt = DateTime.Now;
-                //新增留言
+                // 新增留言
                 _context.Comments.Add(comment);
-                try { 
-                    await _context.SaveChangesAsync();
-
+                await _context.SaveChangesAsync();
+                // 查詢留言者的名稱
+                var commenterName = _context.userInfo
+                    .Where(u => u.id == comment.UserId)
+                    .Select(u => u.name)
+                    .FirstOrDefault();
+                // 產生通知
+                var message = $"用戶 {commenterName} 對您的貼文留言: \"{comment.Content}\"";
+                await _notificationService.CreateNotificationAsync(postOwnerId, message, comment.ComentId, NotificationsType.留言);                
+                try {                     
                     return Ok(new
                     {
                         comment.ComentId,

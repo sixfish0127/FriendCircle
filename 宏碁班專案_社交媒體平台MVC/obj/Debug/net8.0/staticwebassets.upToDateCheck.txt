@@ -15,9 +15,9 @@ wwwroot\fonts\themify (1).eot
 wwwroot\fonts\themify.eot
 wwwroot\fonts\themify.ttf
 wwwroot\fonts\themify.woff
+wwwroot\images\06cefe59-ed8f-4b72-bea3-cb0317cd9906.png
 wwwroot\images\28eae4c9-cc21-42de-bede-07b402f0ec1e.png
 wwwroot\images\2acaae86-ecb0-4c0c-a82b-ddaab1230a19.png
-wwwroot\images\4ea1e52f-3e88-4bbc-8180-555398f23a34.png
 wwwroot\images\b-10.png
 wwwroot\images\b-14.png
 wwwroot\images\b-17.png
@@ -30,6 +30,8 @@ wwwroot\images\challenge-medal.svg
 wwwroot\images\chip.png
 wwwroot\images\close.png
 wwwroot\images\coming-soon.png
+wwwroot\images\dae5b258-90e6-4be9-b579-5a21df2fe2f8.png
+wwwroot\images\Default.jpg
 wwwroot\images\download1.png
 wwwroot\images\download2.png
 wwwroot\images\download3.png

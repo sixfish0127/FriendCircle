@@ -204,6 +204,18 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"xoyi32mgbc"},{"Name":"integrity","Value":"sha256-3/QV2uyRG2Xcpb4CBxoYJbdVCP8VjeW42Fl2lX25Mcs="},{"Name":"label","Value":"_content/\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC/fonts/themify.eot"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"78748"},{"Name":"Content-Type","Value":"application/vnd.ms-fontobject"},{"Name":"ETag","Value":"\u00223/QV2uyRG2Xcpb4CBxoYJbdVCP8VjeW42Fl2lX25Mcs=\u0022"},{"Name":"Last-Modified","Value":"Mon, 26 Dec 2022 14:02:45 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/宏碁班專案_社交媒體平台MVC/images/06cefe59-ed8f-4b72-bea3-cb0317cd9906.gxie65t7wj.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\06cefe59-ed8f-4b72-bea3-cb0317cd9906.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"gxie65t7wj"},{"Name":"integrity","Value":"sha256-VOEtlcFxzCZFwJp\u002B58PRCR52S5YMLiWt5HL/rsRxxm8="},{"Name":"label","Value":"_content/\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC/images/06cefe59-ed8f-4b72-bea3-cb0317cd9906.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"76897"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022VOEtlcFxzCZFwJp\u002B58PRCR52S5YMLiWt5HL/rsRxxm8=\u0022"},{"Name":"Last-Modified","Value":"Thu, 19 Dec 2024 11:42:41 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/宏碁班專案_社交媒體平台MVC/images/06cefe59-ed8f-4b72-bea3-cb0317cd9906.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\06cefe59-ed8f-4b72-bea3-cb0317cd9906.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-VOEtlcFxzCZFwJp\u002B58PRCR52S5YMLiWt5HL/rsRxxm8="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"76897"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022VOEtlcFxzCZFwJp\u002B58PRCR52S5YMLiWt5HL/rsRxxm8=\u0022"},{"Name":"Last-Modified","Value":"Thu, 19 Dec 2024 11:42:41 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/宏碁班專案_社交媒體平台MVC/images/28eae4c9-cc21-42de-bede-07b402f0ec1e.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\28eae4c9-cc21-42de-bede-07b402f0ec1e.png'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -227,18 +239,6 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-8Mg49CtzuhleLTMYX3zTGJgZ7zMF4s3IWcpmAwD1aGk="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"940522"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u00228Mg49CtzuhleLTMYX3zTGJgZ7zMF4s3IWcpmAwD1aGk=\u0022"},{"Name":"Last-Modified","Value":"Wed, 11 Dec 2024 04:07:09 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/宏碁班專案_社交媒體平台MVC/images/4ea1e52f-3e88-4bbc-8180-555398f23a34.e4izkpr5c3.png">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\4ea1e52f-3e88-4bbc-8180-555398f23a34.png'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"e4izkpr5c3"},{"Name":"integrity","Value":"sha256-gjGmWR3F3Iz1t4x6MsvmJeaHb4EwxoXI42L1ILfgbAU="},{"Name":"label","Value":"_content/\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC/images/4ea1e52f-3e88-4bbc-8180-555398f23a34.png"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"101779"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022gjGmWR3F3Iz1t4x6MsvmJeaHb4EwxoXI42L1ILfgbAU=\u0022"},{"Name":"Last-Modified","Value":"Tue, 17 Dec 2024 12:33:33 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/宏碁班專案_社交媒體平台MVC/images/4ea1e52f-3e88-4bbc-8180-555398f23a34.png">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\4ea1e52f-3e88-4bbc-8180-555398f23a34.png'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-gjGmWR3F3Iz1t4x6MsvmJeaHb4EwxoXI42L1ILfgbAU="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"101779"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022gjGmWR3F3Iz1t4x6MsvmJeaHb4EwxoXI42L1ILfgbAU=\u0022"},{"Name":"Last-Modified","Value":"Tue, 17 Dec 2024 12:33:33 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/宏碁班專案_社交媒體平台MVC/images/b-10.faprn8ywe4.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\b-10.png'))</AssetFile>
@@ -383,6 +383,30 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"yqo0dtg6el"},{"Name":"integrity","Value":"sha256-Sr561Y/8lhRhBwJTyGhFGgSP6ws2lDA/U7mMyzO0tGs="},{"Name":"label","Value":"_content/\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC/images/coming-soon.png"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"29804"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022Sr561Y/8lhRhBwJTyGhFGgSP6ws2lDA/U7mMyzO0tGs=\u0022"},{"Name":"Last-Modified","Value":"Mon, 26 Dec 2022 14:02:45 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/宏碁班專案_社交媒體平台MVC/images/dae5b258-90e6-4be9-b579-5a21df2fe2f8.gxie65t7wj.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\dae5b258-90e6-4be9-b579-5a21df2fe2f8.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"gxie65t7wj"},{"Name":"integrity","Value":"sha256-VOEtlcFxzCZFwJp\u002B58PRCR52S5YMLiWt5HL/rsRxxm8="},{"Name":"label","Value":"_content/\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC/images/dae5b258-90e6-4be9-b579-5a21df2fe2f8.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"76897"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022VOEtlcFxzCZFwJp\u002B58PRCR52S5YMLiWt5HL/rsRxxm8=\u0022"},{"Name":"Last-Modified","Value":"Thu, 19 Dec 2024 11:12:44 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/宏碁班專案_社交媒體平台MVC/images/dae5b258-90e6-4be9-b579-5a21df2fe2f8.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\dae5b258-90e6-4be9-b579-5a21df2fe2f8.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-VOEtlcFxzCZFwJp\u002B58PRCR52S5YMLiWt5HL/rsRxxm8="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"76897"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022VOEtlcFxzCZFwJp\u002B58PRCR52S5YMLiWt5HL/rsRxxm8=\u0022"},{"Name":"Last-Modified","Value":"Thu, 19 Dec 2024 11:12:44 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/宏碁班專案_社交媒體平台MVC/images/Default.fbpsl6wprs.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\Default.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"fbpsl6wprs"},{"Name":"integrity","Value":"sha256-K7wvbRO\u002Bito1AT/Igv6BHcET19iCrK3Y6y\u002BEykPgaSg="},{"Name":"label","Value":"_content/\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC/images/Default.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"16213"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022K7wvbRO\u002Bito1AT/Igv6BHcET19iCrK3Y6y\u002BEykPgaSg=\u0022"},{"Name":"Last-Modified","Value":"Thu, 19 Dec 2024 11:49:50 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/宏碁班專案_社交媒體平台MVC/images/Default.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\Default.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-K7wvbRO\u002Bito1AT/Igv6BHcET19iCrK3Y6y\u002BEykPgaSg="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"16213"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022K7wvbRO\u002Bito1AT/Igv6BHcET19iCrK3Y6y\u002BEykPgaSg=\u0022"},{"Name":"Last-Modified","Value":"Thu, 19 Dec 2024 11:49:50 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/宏碁班專案_社交媒體平台MVC/images/download1.izhcjnbmjm.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\download1.png'))</AssetFile>

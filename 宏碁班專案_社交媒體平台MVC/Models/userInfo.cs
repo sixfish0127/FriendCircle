@@ -41,6 +41,8 @@ public partial class userInfo
 
     public virtual ICollection<FriendShip> FriendShipUserId2Navigation { get; set; } = new List<FriendShip>();
 
+    public virtual ICollection<Notifications> Notifications { get; set; } = new List<Notifications>();
+
     public virtual ICollection<Posts> Posts { get; set; } = new List<Posts>();
 
     public virtual ICollection<ReactionType> ReactionType { get; set; } = new List<ReactionType>();

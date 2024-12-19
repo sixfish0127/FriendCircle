@@ -74,30 +74,26 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
 
         //上傳使用者頭像
         [HttpPost]
-        public async Task<IActionResult> UploadAvatar(IFormFile file)
+        public IActionResult UploadAvatar(IFormFile file)
         {
             if (file == null || file.Length == 0)
             {
                 Console.WriteLine("文件為空");
                 return RedirectToAction("AccountInfo");
             }
-            ////檢查文件類型
-            //if (!file.ContentType.StartsWith("image/"))
-            //{
-            //    ViewBag.ErrorMessage = "只能上傳圖片文件。";
-            //    return View("AccountInfo");
-            //}            
-            // 儲存檔案到 wwwroot/image 資料夾
+           
             var uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images");
             if (!Directory.Exists(uploadsFolder))
             {
                 Directory.CreateDirectory(uploadsFolder);
             }
             // 查詢當前用戶的舊圖片路徑
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;            
             var user = _dbManager.getUserById(int.Parse(userId));
+            //預設頭像
+            var defaultimage = "/images/Default.jpg";
             // 刪除舊圖片（如果存在）
-            if (user.userimage != null)
+            if (user.userimage != null && user.userimage != defaultimage)
             {
                 var oldImagePath = Path.Combine(_webHostEnvironment.WebRootPath, user.userimage.TrimStart('/'));
                 if (System.IO.File.Exists(oldImagePath))
@@ -113,13 +109,13 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
             using (var image = Image.Load(stream))
             {
                 // 調整圖片大小至指定寬高，例如 300x300
-                image.Mutate(x => x.Resize(200, 200));                
+                image.Mutate(x => x.Resize(200, 200));
                 // 儲存圖片
                 image.Save(filePath);
-            }            
+            }
             // 將圖片連結保存到資料庫
             user.userimage = $"/images/{uniqueFileName}";
-            _dbManager.UpdateUser(user);          
+            _dbManager.UpdateUser(user);
             return RedirectToAction("AccountInfo");
         }
         //登出

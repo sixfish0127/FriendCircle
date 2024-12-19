@@ -31,6 +31,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[Notifications]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[Posts]",
          "ObjectType": 0
       },

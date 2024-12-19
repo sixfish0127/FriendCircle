@@ -73,6 +73,10 @@
       "PackagePath": "staticwebassets\\fonts\\themify.woff"
     },
     {
+      "Id": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\06cefe59-ed8f-4b72-bea3-cb0317cd9906.png",
+      "PackagePath": "staticwebassets\\images\\06cefe59-ed8f-4b72-bea3-cb0317cd9906.png"
+    },
+    {
       "Id": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\28eae4c9-cc21-42de-bede-07b402f0ec1e.png",
       "PackagePath": "staticwebassets\\images\\28eae4c9-cc21-42de-bede-07b402f0ec1e.png"
     },
@@ -81,8 +85,8 @@
       "PackagePath": "staticwebassets\\images\\2acaae86-ecb0-4c0c-a82b-ddaab1230a19.png"
     },
     {
-      "Id": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\4ea1e52f-3e88-4bbc-8180-555398f23a34.png",
-      "PackagePath": "staticwebassets\\images\\4ea1e52f-3e88-4bbc-8180-555398f23a34.png"
+      "Id": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\Default.jpg",
+      "PackagePath": "staticwebassets\\images\\Default.jpg"
     },
     {
       "Id": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\b-10.png",
@@ -131,6 +135,10 @@
     {
       "Id": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\coming-soon.png",
       "PackagePath": "staticwebassets\\images\\coming-soon.png"
+    },
+    {
+      "Id": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\dae5b258-90e6-4be9-b579-5a21df2fe2f8.png",
+      "PackagePath": "staticwebassets\\images\\dae5b258-90e6-4be9-b579-5a21df2fe2f8.png"
     },
     {
       "Id": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\images\\download1.png",
