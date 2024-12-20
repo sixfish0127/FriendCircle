@@ -18,7 +18,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
         public async Task<IActionResult> GetPosts(int page=1,int pageSize=10,bool userOnly = false,int?uid = null)
         {            
             if (page<1||pageSize<1) return BadRequest("無效的請求");
-
+            
             var query = _friendCircleContext.Posts
                 .Include(p => p.User)
                 .OrderBy(p => p.CreatedAt);

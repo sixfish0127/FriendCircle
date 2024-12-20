@@ -22,19 +22,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
         {
             return View();
         }
-        [HttpGet]
-        public IActionResult EditAbout()
-        {
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            var user = _dbManager.getUserById(int.Parse(userId));
-
-            if (user == null)
-            {
-                return NotFound("無法找到使用者資訊。");
-            }
-
-            return View(user); // 將使用者資訊傳遞到 View
-        }
+        
         public IActionResult Details()
         {
             var userName = User.Identity.Name;
@@ -48,14 +36,11 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
         public IActionResult PostDetails(int id)
         {                        
             var user = _dbManager.getUserById(id);
+            //使用ViewBag傳遞資料到View
+            ViewBag.LoginId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
             return View(user);
         }
-        [HttpPost]
-        public IActionResult UpdateUser(userInfo user)
-        {
-            
-            return RedirectToAction("Index");
-        }
+        
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

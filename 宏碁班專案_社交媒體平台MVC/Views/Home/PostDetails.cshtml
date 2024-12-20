@@ -8,11 +8,16 @@
                     <form method="post" asp-action="" asp-controller="Home">
                         <div class="card-body p-0 position-relative" id="user-profile" data-uid="@Model.id">
                             <figure class="avatar position-absolute w100 z-index-1" style="top:-40px; left: 30px;"><img src="@Model.userimage" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
-                            <h4 class="fw-700 font-sm mt-2 mb-lg-5 mb-4 pl-15"> <span class="fw-500 font-xssss text-grey-500 mt-1 mb-3 d-block" id="uid" data-uid = "@Model.id">@Model.name</span></h4>
-                            <div class="d-flex align-items-center justify-content-center position-absolute-md right-15 top-0 me-2">
-                                <button type="submit" class="d-none d-lg-block bg-success p-3 z-index-1 rounded-3 font-xsssss text-uppercase fw-700 ls-3">添加好友</button>
-                                <a href="#" class="d-none d-lg-block bg-greylight btn-round-lg ms-2 rounded-3 text-grey-700"><i class="feather-mail font-md"></i></a>
-                            </div>
+                            <h4 class="fw-700 font-sm mt-2 mb-lg-5 mb-4 pl-15"> <span class="fw-500 font-xssss text-grey-500 mt-1 mb-3 d-block">@Model.name</span></h4>
+                            @{
+								// 如果登入者不是目前使用者，顯示添加好友按鈕
+                                if (ViewBag.LoginId != @Model.id){
+                                    <div class="d-flex align-items-center justify-content-center position-absolute-md right-15 top-0 me-2">
+                                        <button type="button" class="d-none d-lg-block bg-success p-3 z-index-1 rounded-3 font-xsssss text-uppercase fw-700 ls-3" onclick="sendFriendRequest(@ViewBag.LoginId)">添加好友</button>
+                                        <a href="#" class="d-none d-lg-block bg-greylight btn-round-lg ms-2 rounded-3 text-grey-700"><i class="feather-mail font-md"></i></a>
+                                    </div>
+                                }
+                            }                           
                         </div>
                     </form>
                 </div>
@@ -70,7 +75,7 @@
         if(userElement){
 			const userid = userElement.getAttribute('data-uid');
 			if(userid){
-                const loadingIndicator = document.getElementById('loading');
+                const loadingIndicator = document.getElementById('loading');                
                 loadingIndicator.style.display = 'none';
                 //加載初始貼文
                 loadMorePosts(userid);
@@ -79,7 +84,7 @@
                     if(isLoading) return;
                     //當滾動接近頁面底部時觸發
                     if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 500){
-                        loadMorePosts();
+                        loadMorePosts(userid);
                     }
                 });
             }else{
@@ -90,7 +95,20 @@
         }
         
     });
-    
+    //發送好友邀請
+    function sendFriendRequest(friendId){
+        console.log("Sending friend request for user:", friendId);
+        fetch('/api/friends/send-request', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(friendId)
+        })
+        .then(response => response.json())
+        .then(data => alert(data.message))
+        .catch(error => console.error('Error:', error));
+    }
     // 切換留言顯示
     function toggleComments(event,postId){
         const commentsSection = document.getElementById(`comments-${postId}`);
