@@ -21,6 +21,7 @@ wwwroot\images\2acaae86-ecb0-4c0c-a82b-ddaab1230a19.png
 wwwroot\images\b-10.png
 wwwroot\images\b-14.png
 wwwroot\images\b-17.png
+wwwroot\images\b597412e-fbb5-40c9-8c1a-5714ec2f6acb.png
 wwwroot\images\b-9.png
 wwwroot\images\bb-16.png
 wwwroot\images\bb-9.jpg
@@ -45,6 +46,7 @@ wwwroot\images\e-3.jpg
 wwwroot\images\e-4.jpg
 wwwroot\images\e-5.jpg
 wwwroot\images\e-6.jpg
+wwwroot\images\f03edc85-5e9a-4eb9-a52d-3700b0b16b4d.png
 wwwroot\images\fast-graduate.svg
 wwwroot\images\favicon.png
 wwwroot\images\female-profile.png

@@ -44,6 +44,12 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
 
             return View(user);
         }
+        [HttpGet("/Home/PostDetails/{id}")]
+        public IActionResult PostDetails(int id)
+        {                        
+            var user = _dbManager.getUserById(id);
+            return View(user);
+        }
         [HttpPost]
         public IActionResult UpdateUser(userInfo user)
         {

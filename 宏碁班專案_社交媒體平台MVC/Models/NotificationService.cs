@@ -42,6 +42,28 @@
 
             return notification;
         }
+        public async Task<Notifications> CreateNotificationAsync(int userId, string message, NotificationsType type)
+        {
+            var notification = new Notifications
+            {
+                UserId = userId,
+                Message = message,
+                Type = type,
+                CreatAt = DateTime.Now,
+                CommentId = userId,
+                IsRead = false
+            };
+            // 確認 postOwnerId 和 comment.ComentId 是否有效
+            if (!_context.userInfo.Any(u => u.id == userId))
+            {
+                throw new Exception($"用戶 ID {userId} 在 Users 表中不存在。");
+            }            
+
+            _context.Notifications.Add(notification);
+            await _context.SaveChangesAsync();
+            
+            return notification;
+        }
 
         //// 發送通知到 Python API
         //private async Task SendNotificationToPython(Notifications notification)

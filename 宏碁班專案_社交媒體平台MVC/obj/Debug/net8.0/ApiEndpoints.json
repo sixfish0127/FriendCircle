@@ -45,7 +45,7 @@
     "ContainingType": "\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC.Controllers.NotificationsApiController",
     "Method": "MarkAsRead",
     "RelativePath": "api/notifications/{id}/mark-read",
-    "HttpMethod": "POST",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -78,6 +78,11 @@
       {
         "Name": "userOnly",
         "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "uid",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       }
     ],

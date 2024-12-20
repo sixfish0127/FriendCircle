@@ -2,6 +2,7 @@
 {
     public enum NotificationsType
     {
+        愛心=0,
         按讚=1,
         留言,
         朋友邀請,

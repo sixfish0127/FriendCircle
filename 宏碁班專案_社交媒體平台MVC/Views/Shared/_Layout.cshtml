@@ -32,19 +32,7 @@
                 <a href="default-video.html" class="mob-menu me-2"><i class="feather-video text-grey-900 font-sm btn-round-md bg-greylight"></i></a>
                 <a href="#" class="me-2 menu-search-icon mob-menu"><i class="feather-search text-grey-900 font-sm btn-round-md bg-greylight"></i></a>
                 <button class="nav-menu me-0 ms-2"></button>
-            </div>
-
-            <form action="#" class="float-left header-search">
-                <div class="form-group mb-0 icon-input">
-                    <i class="feather-search font-sm text-grey-400"></i>
-                    <input type="text" placeholder="Start typing to search.." class="bg-grey border-0 lh-32 pt-2 pb-2 ps-5 pe-3 font-xssss fw-500 rounded-xl w350 theme-dark-bg">
-                </div>
-            </form>
-            <a href="@Url.Action("Newsfeed","Posts")" class="p-2 text-center ms-3 menu-icon center-menu-icon"><i class="feather-home font-lg alert-primary btn-round-lg theme-dark-bg text-current "></i></a>
-            <a href="default-storie.html" class="p-2 text-center ms-0 menu-icon center-menu-icon"><i class="feather-zap font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i></a>
-            <a href="default-video.html" class="p-2 text-center ms-0 menu-icon center-menu-icon"><i class="feather-video font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i></a>
-            <a href="default-group.html" class="p-2 text-center ms-0 menu-icon center-menu-icon"><i class="feather-user font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i></a>
-            <a href="shop-2.html" class="p-2 text-center ms-0 menu-icon center-menu-icon"><i class="feather-shopping-bag font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i></a>
+            </div>                        
 
             <a href="#" class="p-2 text-center ms-auto menu-icon" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-bs-toggle="dropdown"><span class="dot-count bg-warning"></span><i class="feather-bell font-xl text-current"></i></a>
             <!-- 通知區塊 -->
@@ -167,27 +155,16 @@
         <nav class="navigation scroll-bar">
             <div class="container ps-0 pe-0">
                 <div class="nav-content">
+
                     <div class="nav-wrap bg-white bg-transparent-card rounded-xxl shadow-xss pt-3 pb-1 mb-2 mt-2">
                         <div class="nav-caption fw-600 font-xssss text-grey-500"><span>New </span>Feeds</div>
                         <ul class="mb-1 top-content">
                             <li class="logo d-none d-xl-block d-lg-block"></li>
-                            <li><a href="@Url.Action("Newsfeed","Posts")" class="nav-content-bttn open-font"><i class="feather-tv btn-round-md bg-blue-gradiant me-3"></i><span>Newsfeed</span></a></li>
-                            <li><a href="default-badge.html" class="nav-content-bttn open-font"><i class="feather-award btn-round-md bg-red-gradiant me-3"></i><span>Badges</span></a></li>
-                            <li><a href="default-storie.html" class="nav-content-bttn open-font"><i class="feather-globe btn-round-md bg-gold-gradiant me-3"></i><span>Explore Stories</span></a></li>
-                            <li><a href="default-group.html" class="nav-content-bttn open-font"><i class="feather-zap btn-round-md bg-mini-gradiant me-3"></i><span>Popular Groups</span></a></li>
+                            <li><a href="@Url.Action("Newsfeed","Posts")" class="nav-content-bttn open-font"><i class="feather-tv btn-round-md bg-blue-gradiant me-3"></i><span>Newsfeed</span></a></li>                            
                             <li><a href="@Url.Action("Details","Home")" class="nav-content-bttn open-font"><i class="feather-user btn-round-md bg-primary-gradiant me-3"></i><span>Author Profile </span></a></li>
                         </ul>
                     </div>
-
-                    <div class="nav-wrap bg-white bg-transparent-card rounded-xxl shadow-xss pt-3 pb-1 mb-2">
-                        <div class="nav-caption fw-600 font-xssss text-grey-500"><span>More </span>Pages</div>
-                        <ul class="mb-3">
-                            <li><a href="default-email-box.html" class="nav-content-bttn open-font"><i class="font-xl text-current feather-inbox me-3"></i><span>Email Box</span><span class="circle-count bg-warning mt-1">584</span></a></li>
-                            <li><a href="default-hotel.html" class="nav-content-bttn open-font"><i class="font-xl text-current feather-home me-3"></i><span>Near Hotel</span></a></li>
-                            <li><a href="default-event.html" class="nav-content-bttn open-font"><i class="font-xl text-current feather-map-pin me-3"></i><span>Latest Event</span></a></li>
-                            <li><a href="default-live-stream.html" class="nav-content-bttn open-font"><i class="font-xl text-current feather-youtube me-3"></i><span>Live Stream</span></a></li>
-                        </ul>
-                    </div>
+                   
                     <div class="nav-wrap bg-white bg-transparent-card rounded-xxl shadow-xss pt-3 pb-1">
                         <div class="nav-caption fw-600 font-xssss text-grey-500"><span></span> Account</div>
                         <ul class="mb-1">
@@ -491,12 +468,14 @@
                         notifications.forEach(n => {
                             const relativeTime = calculateRelativeTime(n.createdAt);//計算時間
                             const notificationDiv = document.createElement('div');
-                            notificationDiv.className="card bg-transparent-card w-100 border-0 ps-5 mb-3";
+                            notificationDiv.className=`card bg-transparent-card w-100 border-0 ps-5 mb-3 ${n.isRead ? 'bg-light' : 'bg-yellow'}`;
                             notificationDiv.innerHTML = `
                                 <img src="${n.commenterImage}" alt="user" class="w40 position-absolute left-0">
                                 <h5 class="font-xsss text-grey-900 mb-1 mt-0 fw-700 d-block">${n.commenterName} <span class="text-grey-400 font-xsssss fw-600 float-right mt-1"> ${relativeTime}</span></h5>
                                 <h6 class="fw-500 font-xssss lh-4">${n.message}</h6>
                             `;
+                            // 添加點擊事件
+                            notificationDiv.onclick = () => markNotificationAsRead(n.id);
                             notificationcontainer.appendChild(notificationDiv);
                         });
                     } else {
@@ -507,6 +486,26 @@
                     console.error('Error fetching notifications:', error);
                     document.getElementById('notification-container').innerHTML = "<li>載入出錯</li>";
                 });
+        }
+
+        function markNotificationAsRead(notificationId){
+            console.log(`標記通知為已讀: ${notificationId}`);
+            fetch(`/api/notifications/${notificationId}/mark-read`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+            .then(response => {
+            if (response.ok) {
+                console.log("通知已標記為已讀");
+                // 可以選擇重新加載通知列表
+                loadNotifications();
+            } else {
+                console.error("標記通知為已讀失敗");
+            }
+        })
+        .catch(error => console.error("API 錯誤:", error));
         }
 
         //計算相對時間

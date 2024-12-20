@@ -26,6 +26,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
             
             return View(user);
         }
+
                 
     }
 }
