@@ -31,6 +31,7 @@ public partial class userInfo
     [NotMapped]
     public string confirmPassword { get; set; }
 
+
     public virtual ICollection<CommentFavorites> CommentFavorites { get; set; } = new List<CommentFavorites>();
 
     public virtual ICollection<CommentShares> CommentShares { get; set; } = new List<CommentShares>();
@@ -41,7 +42,9 @@ public partial class userInfo
 
     public virtual ICollection<FriendShip> FriendShipUserId2Navigation { get; set; } = new List<FriendShip>();
 
-    public virtual ICollection<Notifications> Notifications { get; set; } = new List<Notifications>();
+    public virtual ICollection<Notifications> NotificationsFriendRequest { get; set; } = new List<Notifications>();
+
+    public virtual ICollection<Notifications> NotificationsUser { get; set; } = new List<Notifications>();
 
     public virtual ICollection<Posts> Posts { get; set; } = new List<Posts>();
 

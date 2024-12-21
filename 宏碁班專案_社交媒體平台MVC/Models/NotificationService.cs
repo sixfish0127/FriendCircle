@@ -35,22 +35,19 @@
             }
 
             _context.Notifications.Add(notification);
-            await _context.SaveChangesAsync();
-
-            // 發送通知到 Python
-            //await SendNotificationToPython(notification);
+            await _context.SaveChangesAsync();           
 
             return notification;
         }
-        public async Task<Notifications> CreateNotificationAsync(int userId, string message, NotificationsType type)
+        public async Task<Notifications> CreateNotificationAsync(int userId, int friendid ,string message, NotificationsType type)
         {
             var notification = new Notifications
             {
                 UserId = userId,
                 Message = message,
                 Type = type,
-                CreatAt = DateTime.Now,
-                CommentId = userId,
+                CreatAt = DateTime.Now, 
+                FriendRequestId = friendid,
                 IsRead = false
             };
             // 確認 postOwnerId 和 comment.ComentId 是否有效
@@ -63,39 +60,6 @@
             await _context.SaveChangesAsync();
             
             return notification;
-        }
-
-        //// 發送通知到 Python API
-        //private async Task SendNotificationToPython(Notifications notification)
-        //{
-        //    var payload = new
-        //    {
-        //        id = notification.Id,
-        //        userId = notification.UserId,
-        //        commentId = notification.CommentId,
-        //        message = notification.Message,
-        //        createdAt = notification.CreatAt,
-        //        isRead = notification.IsRead
-        //    };
-
-        //    var content = new StringContent(JsonConvert.SerializeObject(payload), Encoding.UTF8, "application/json");
-
-        //    try
-        //    {
-        //        var response = await _httpClient.PostAsync("https://localhost:7281//api/process-notifications", content);
-        //        if (response.IsSuccessStatusCode)
-        //        {
-        //            Console.WriteLine("成功傳送至python!");
-        //        }
-        //        else
-        //        {
-        //            Console.WriteLine($"傳送至python失敗: {response.StatusCode}");
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine($"傳送至python時錯誤: {ex.Message}");
-        //    }
-        //}
+        }        
     }
 }

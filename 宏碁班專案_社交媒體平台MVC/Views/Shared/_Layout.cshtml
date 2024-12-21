@@ -358,11 +358,8 @@
         <!-- right chat -->
 
         <div class="app-footer border-0 shadow-lg bg-primary-gradiant">
-            <a href="@Url.Action("Newsfeed","Posts")" class="nav-content-bttn nav-center"><i class="feather-home"></i></a>
-            <a href="default-video.html" class="nav-content-bttn"><i class="feather-package"></i></a>
-            <a href="default-live-stream.html" class="nav-content-bttn" data-tab="chats"><i class="feather-layout"></i></a>
-            <a href="shop-2.html" class="nav-content-bttn"><i class="feather-layers"></i></a>
-            <a href="@Url.Action("Setting","User")" class="nav-content-bttn"><img src="images/female-profile.png" alt="user" class="w30 shadow-xss"></a>
+            <a href="@Url.Action("Newsfeed","Posts")" class="nav-content-bttn nav-center"><i class="feather-home"></i></a>            
+            @await Component.InvokeAsync("_Layout")
         </div>
 
         <div class="app-header-search">
@@ -466,14 +463,37 @@
 
                     if (notifications.length > 0) {
                         notifications.forEach(n => {
+                            console.log("n的資料:",n)
                             const relativeTime = calculateRelativeTime(n.createdAt);//計算時間
                             const notificationDiv = document.createElement('div');
                             notificationDiv.className=`card bg-transparent-card w-100 border-0 ps-5 mb-3 ${n.isRead ? 'bg-light' : 'bg-yellow'}`;
-                            notificationDiv.innerHTML = `
+                            // 根據通知類型動態生成內容
+                            if(n.type === 2){
+                                notificationDiv.innerHTML = `
                                 <img src="${n.commenterImage}" alt="user" class="w40 position-absolute left-0">
                                 <h5 class="font-xsss text-grey-900 mb-1 mt-0 fw-700 d-block">${n.commenterName} <span class="text-grey-400 font-xsssss fw-600 float-right mt-1"> ${relativeTime}</span></h5>
                                 <h6 class="fw-500 font-xssss lh-4">${n.message}</h6>
                             `;
+                            }else if(n.type === 3){
+                                if(!n.isRead){
+                                    notificationDiv.innerHTML += `
+                                    <img src="${n.friendImage || 'default-image.jpg'}" alt="user" class="w40 position-absolute left-0">
+                                    <h5 class="font-xsss text-grey-900 mb-1 mt-0 fw-700 d-block">${n.friendName} <span class="text-grey-400 font-xsssss fw-600 float-right mt-1">${relativeTime}</span></h5>
+                                    <h6 class="fw-500 font-xssss lh-4">${n.message}</h6>
+                                    <div class="d-flex justify-content-start mt-2">
+                                        <button class="btn btn-sm btn-success me-2" onclick="acceptFriendRequest(${n.friendId},'Accepted')">接受</button>
+                                        <button class="btn btn-sm btn-danger" onclick="rejectFriendRequest(${n.friendId},'Rejected')">拒絕</button>
+                                    </div>
+                                `;
+                                }                                
+                            }else if(n.type === 4){
+                                notificationDiv.innerHTML = `
+                                <img src="${n.friendImage || 'default-image.jpg'}" alt="user" class="w40 position-absolute left-0">
+                                <h5 class="font-xsss text-grey-900 mb-1 mt-0 fw-700 d-block">${n.friendName} <span class="text-grey-400 font-xsssss fw-600 float-right mt-1">${relativeTime}</span></h5>
+                                <h6 class="fw-500 font-xssss lh-4">${n.message}</h6>
+                                `;
+                            }
+                            
                             // 添加點擊事件
                             notificationDiv.onclick = () => markNotificationAsRead(n.id);
                             notificationcontainer.appendChild(notificationDiv);
@@ -487,7 +507,46 @@
                     document.getElementById('notification-container').innerHTML = "<li>載入出錯</li>";
                 });
         }
+        //處理好友邀請
+		function acceptFriendRequest(friendId, status){
+			console.log(`接受好友請求: ${friendId}`);
+            fetch(`/api/friends/${friendId}/response-request/${status}`, {
+				method: "PUT",
+				headers: {
+					"Content-Type": "application/json",
+				},				
+			})
+			.then(response => {
+				if (response.ok) {
+					console.log("好友請求已處理");
+					// 可以選擇重新加載通知列表
+					loadNotifications();
+				} else {
+					console.error("接受好友請求失敗");
+				}
+			})
+			.catch(error => console.error("API 錯誤:", error));
+		}
 
+		function rejectFriendRequest(friendId, status){
+            console.log(`拒絕好友請求: ${friendId}`);
+            fetch(`/api/friends/${friendId}/response-request/${status}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ status }),
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log("好友請求已接受");
+                    // 可以選擇重新加載通知列表
+                    loadNotifications();
+                } else {
+                    console.error("接受好友請求失敗");
+                }
+            })
+        }
         function markNotificationAsRead(notificationId){
             console.log(`標記通知為已讀: ${notificationId}`);
             fetch(`/api/notifications/${notificationId}/mark-read`, {

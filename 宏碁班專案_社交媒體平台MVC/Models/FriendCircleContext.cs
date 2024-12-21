@@ -121,10 +121,13 @@ public partial class FriendCircleContext : DbContext
 
             entity.HasOne(d => d.Comment).WithMany(p => p.Notifications)
                 .HasForeignKey(d => d.CommentId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Notifications_Comments");
 
-            entity.HasOne(d => d.User).WithMany(p => p.Notifications)
+            entity.HasOne(d => d.FriendRequest).WithMany(p => p.NotificationsFriendRequest)
+                .HasForeignKey(d => d.FriendRequestId)
+                .HasConstraintName("FK_Notifications_userInfo1");
+
+            entity.HasOne(d => d.User).WithMany(p => p.NotificationsUser)
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Notifications_userInfo");
@@ -188,7 +191,7 @@ public partial class FriendCircleContext : DbContext
             entity.Property(e => e.userimage)
                 .HasMaxLength(50)
                 .IsUnicode(false)
-                .HasDefaultValue("/images/Default.jpg");
+                .HasDefaultValue("/images/default.jpg");
         });
 
         OnModelCreatingPartial(modelBuilder);

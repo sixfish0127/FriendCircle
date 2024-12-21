@@ -11,10 +11,12 @@ public partial class Notifications
 
     public int UserId { get; set; }
 
-    public int CommentId { get; set; }
+    public int? CommentId { get; set; }
+
+    public int? FriendRequestId { get; set; }
+
 
     public NotificationsType Type { get; set; }
-
 
     public string Message { get; set; }
 
@@ -23,6 +25,8 @@ public partial class Notifications
     public bool IsRead { get; set; }
 
     public virtual Comments Comment { get; set; }
+
+    public virtual userInfo FriendRequest { get; set; }
 
     public virtual userInfo User { get; set; }
 }

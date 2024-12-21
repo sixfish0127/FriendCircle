@@ -12,6 +12,18 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ovzbyby9ou"},{"Name":"integrity","Value":"sha256-ZFilfHqzbnRn8lZDZ4AThkW\u002BA/Eh8KiaiMQDDqETHxk="},{"Name":"label","Value":"_content/\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC/css/bootstrap-datetimepicker.css"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"10736"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022ZFilfHqzbnRn8lZDZ4AThkW\u002BA/Eh8KiaiMQDDqETHxk=\u0022"},{"Name":"Last-Modified","Value":"Mon, 26 Dec 2022 14:02:45 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/宏碁班專案_社交媒體平台MVC/css/dashboard.5wjeywpxby.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\dashboard.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"5wjeywpxby"},{"Name":"integrity","Value":"sha256-NQ6IVf47uIEqU\u002BOXokbakinM6i5sz\u002BsFb/g7rSFWTjA="},{"Name":"label","Value":"_content/\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC/css/dashboard.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1179"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022NQ6IVf47uIEqU\u002BOXokbakinM6i5sz\u002BsFb/g7rSFWTjA=\u0022"},{"Name":"Last-Modified","Value":"Sat, 21 Dec 2024 08:22:27 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/宏碁班專案_社交媒體平台MVC/css/dashboard.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\dashboard.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-NQ6IVf47uIEqU\u002BOXokbakinM6i5sz\u002BsFb/g7rSFWTjA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1179"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022NQ6IVf47uIEqU\u002BOXokbakinM6i5sz\u002BsFb/g7rSFWTjA=\u0022"},{"Name":"Last-Modified","Value":"Sat, 21 Dec 2024 08:22:27 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/宏碁班專案_社交媒體平台MVC/css/emoji.18k0jdz336.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\emoji.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

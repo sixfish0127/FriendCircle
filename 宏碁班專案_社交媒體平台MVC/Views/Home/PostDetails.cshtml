@@ -4,22 +4,22 @@
             <div class="col-lg-12">
                 <div class="card w-100 border-0 p-0 bg-white shadow-xss rounded-xxl">
                     <!-- 背景 -->
-                    <div class="card-body h250 p-0 rounded-xxl overflow-hidden m-3"><img src="/images/u-bg.jpg" alt="image"></div>
-                    <form method="post" asp-action="" asp-controller="Home">
-                        <div class="card-body p-0 position-relative" id="user-profile" data-uid="@Model.id">
-                            <figure class="avatar position-absolute w100 z-index-1" style="top:-40px; left: 30px;"><img src="@Model.userimage" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
-                            <h4 class="fw-700 font-sm mt-2 mb-lg-5 mb-4 pl-15"> <span class="fw-500 font-xssss text-grey-500 mt-1 mb-3 d-block">@Model.name</span></h4>
-                            @{
-								// 如果登入者不是目前使用者，顯示添加好友按鈕
-                                if (ViewBag.LoginId != @Model.id){
-                                    <div class="d-flex align-items-center justify-content-center position-absolute-md right-15 top-0 me-2">
-                                        <button type="button" class="d-none d-lg-block bg-success p-3 z-index-1 rounded-3 font-xsssss text-uppercase fw-700 ls-3" onclick="sendFriendRequest(@ViewBag.LoginId)">添加好友</button>
-                                        <a href="#" class="d-none d-lg-block bg-greylight btn-round-lg ms-2 rounded-3 text-grey-700"><i class="feather-mail font-md"></i></a>
-                                    </div>
-                                }
-                            }                           
-                        </div>
-                    </form>
+                    <div class="card-body h250 p-0 rounded-xxl overflow-hidden m-3"><img src="/images/u-bg.jpg" alt="image"></div>                    
+                    <div class="card-body p-0 position-relative" id="user-profile" data-uid="@Model.id">
+                        <figure class="avatar position-absolute w100 z-index-1" style="top:-40px; left: 30px;"><img src="@Model.userimage" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
+                        <h4 class="fw-700 font-sm mt-2 mb-lg-5 mb-4 pl-15"> <span class="fw-500 font-xssss text-grey-500 mt-1 mb-3 d-block">@Model.name</span></h4>
+                        @{
+                            int LoginId = ViewBag.LoginId;
+							// 如果登入者不是目前使用者，顯示添加好友按鈕
+                            if (LoginId != @Model.id)
+                            {
+                                <div class="d-flex align-items-center justify-content-center position-absolute-md right-15 top-0 me-2">
+                                    <button type="button" class="d-none d-lg-block bg-success p-3 z-index-1 rounded-3 font-xsssss text-uppercase fw-700 ls-3" onclick="sendFriendRequest(@LoginId,@Model.id)">添加好友</button>
+                                    <a href="#" class="d-none d-lg-block bg-greylight btn-round-lg ms-2 rounded-3 text-grey-700"><i class="feather-mail font-md"></i></a>
+                                </div>
+                            }
+                        }                           
+                    </div>                   
                 </div>
             </div>
             <div class="col-xl-4 col-xxl-3 col-lg-4 pe-0">
@@ -96,18 +96,30 @@
         
     });
     //發送好友邀請
-    function sendFriendRequest(friendId){
-        console.log("Sending friend request for user:", friendId);
+    function sendFriendRequest(sendId,receiverId){
+        console.log("Sending friend request for user:", sendId, receiverId);
         fetch('/api/friends/send-request', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(friendId)
+            body: JSON.stringify({ 
+                sendId: sendId,
+                receiverId:receiverId
+            })
         })
-        .then(response => response.json())
-        .then(data => alert(data.message))
-        .catch(error => console.error('Error:', error));
+        .then(response => {
+            if (!response.ok) {
+                return response.text().then(text => { throw new Error(text); });
+            }
+            return response.json(); // 解析 JSON 回應
+        })
+        .then(data => {
+            console.log('Friend request sent:', data);
+        })
+        .catch(error =>  {
+            console.error('Error:', error.message);
+        });
     }
     // 切換留言顯示
     function toggleComments(event,postId){

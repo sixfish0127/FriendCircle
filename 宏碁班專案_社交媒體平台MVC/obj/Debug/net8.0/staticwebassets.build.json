@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QO2x9/WPDL0hmL8Vo3tCvPqVVFogB/xap6lOsG4rAzo=",
+  "Hash": "U9FRHfHj9j6AWi6jhGbhpks1pox3GNUiPMNdwM1o3KY=",
   "Source": "宏碁班專案_社交媒體平台MVC",
   "BasePath": "_content/宏碁班專案_社交媒體平台MVC",
   "Mode": "Default",
@@ -78,6 +78,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\bootstrap-datetimepicker.css"
+    },
+    {
+      "Identity": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\css\\dashboard.css",
+      "SourceId": "宏碁班專案_社交媒體平台MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\",
+      "BasePath": "_content/宏碁班專案_社交媒體平台MVC",
+      "RelativePath": "css/dashboard#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5wjeywpxby",
+      "Integrity": "NQ6IVf47uIEqU+OXokbakinM6i5sz+sFb/g7rSFWTjA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\dashboard.css"
     },
     {
       "Identity": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\css\\emoji.css",
@@ -5473,6 +5494,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-ZFilfHqzbnRn8lZDZ4AThkW+A/Eh8KiaiMQDDqETHxk="
+        }
+      ]
+    },
+    {
+      "Route": "css/dashboard.5wjeywpxby.css",
+      "AssetFile": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\css\\dashboard.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1179"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NQ6IVf47uIEqU+OXokbakinM6i5sz+sFb/g7rSFWTjA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 21 Dec 2024 08:22:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5wjeywpxby"
+        },
+        {
+          "Name": "label",
+          "Value": "css/dashboard.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-NQ6IVf47uIEqU+OXokbakinM6i5sz+sFb/g7rSFWTjA="
+        }
+      ]
+    },
+    {
+      "Route": "css/dashboard.css",
+      "AssetFile": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\css\\dashboard.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1179"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NQ6IVf47uIEqU+OXokbakinM6i5sz+sFb/g7rSFWTjA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 21 Dec 2024 08:22:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-NQ6IVf47uIEqU+OXokbakinM6i5sz+sFb/g7rSFWTjA="
         }
       ]
     },

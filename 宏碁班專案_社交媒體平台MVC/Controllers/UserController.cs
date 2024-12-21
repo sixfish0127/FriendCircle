@@ -21,7 +21,12 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
             _logger = logger;
             _dbManager = dbManager;
             _webHostEnvironment = webHostEnvironment;
-        }        
+        }
+        public IActionResult Analytics() 
+        {
+            return View();
+        }
+        //用戶資訊頁面
         public IActionResult AccountInfo()
         {            
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;

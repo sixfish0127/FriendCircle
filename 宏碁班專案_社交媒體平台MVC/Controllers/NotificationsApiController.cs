@@ -24,8 +24,8 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
         public async Task<IActionResult> GetNotifications()
         {
              // 獲取目前登入用戶的 ID
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;            
+            
             var notifications = await _context.Notifications
                 .Where(n=>n.UserId==int.Parse(userId))
                 .Include(n => n.Comment)  // 包括留言資訊
@@ -41,7 +41,10 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
                     commenterName = n.Comment.User.name, // 留言者名稱
                     commenterImage = n.Comment.User.userimage, // 留言者頭像
                     postOwnerName = n.User.name, // 貼文擁有者名稱（可選）
-                    postOwnerImage = n.User.userimage // 貼文擁有者頭像（可選）
+                    postOwnerImage = n.User.userimage, // 貼文擁有者頭像（可選）
+                    friendName = _context.userInfo.Where(u=>u.id==n.FriendRequestId).Select(u => u.name).FirstOrDefault(), // 朋友名稱
+                    friendImage = _context.userInfo.Where(u => u.id == n.FriendRequestId).Select(u => u.userimage).FirstOrDefault(), // 朋友頭像
+                    friendId = n.FriendRequestId // 朋友ID    
                 })
                 .ToListAsync();
 

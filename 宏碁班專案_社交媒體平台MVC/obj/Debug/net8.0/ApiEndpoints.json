@@ -33,33 +33,33 @@
   },
   {
     "ContainingType": "\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC.Controllers.FriendsApiController",
-    "Method": "GetFriendsList",
-    "RelativePath": "api/friends/list",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC.Controllers.FriendsApiController",
     "Method": "RespondToFriendRequest",
-    "RelativePath": "api/friends/respond-request",
-    "HttpMethod": "POST",
+    "RelativePath": "api/friends/{requestId}/response-request/{status}",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "requestId",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "status",
         "Type": "System.String",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC.Controllers.FriendsApiController",
+    "Method": "GetFriendsList",
+    "RelativePath": "api/friends/list",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -71,8 +71,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "friendId",
-        "Type": "System.Int32",
+        "Name": "friendRequest",
+        "Type": "\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC.Controllers.FriendsApiController\u002BFriendRequestDto",
         "IsRequired": true
       }
     ],

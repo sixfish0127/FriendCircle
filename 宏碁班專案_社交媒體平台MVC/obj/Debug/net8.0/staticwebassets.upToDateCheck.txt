@@ -1,4 +1,5 @@
 wwwroot\css\bootstrap-datetimepicker.css
+wwwroot\css\dashboard.css
 wwwroot\css\emoji.css
 wwwroot\css\feather.css
 wwwroot\css\lightbox.css

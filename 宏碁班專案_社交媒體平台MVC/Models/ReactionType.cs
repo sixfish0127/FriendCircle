@@ -11,6 +11,7 @@ public partial class ReactionType
     public int PostId { get; set; }
 
     public int UserId { get; set; }
+
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public PostReactionType ReactionType1 { get; set; }
 

@@ -1,0 +1,53 @@
+﻿/* 設定整體背景顏色為白色 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #0044cc; /* 藍色文字 */
+    margin: 0;
+    padding: 20px;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 總數區域 */
+.summary-section {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.summary-card {
+    background-color: #e6f0ff; /* 淡藍色背景 */
+    border: 2px solid #0044cc; /* 藍色邊框 */
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .summary-card i {
+        font-size: 36px;
+        color: #0044cc; /* 藍色圖標 */
+        margin-bottom: 10px;
+    }
+
+    .summary-card h2 {
+        color: #0044cc; /* 藍色數字 */
+        font-size: 36px;
+        margin: 0;
+    }
+
+    .summary-card p {
+        font-size: 16px;
+        color: #0044cc; /* 藍色描述文字 */
+    }
+
+    .summary-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 255, 0.2); /* 藍色陰影 */
+    }
