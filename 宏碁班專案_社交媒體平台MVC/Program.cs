@@ -17,6 +17,8 @@ builder.Services.AddScoped<DBmanager>();
 builder.Services.AddHttpClient();
 // 註冊 NotificationService
 builder.Services.AddScoped<NotificationService>();
+// 註冊 MutualFriendService
+builder.Services.AddScoped<MutualFriendService>();
 
 // 添加身份驗證服務
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)

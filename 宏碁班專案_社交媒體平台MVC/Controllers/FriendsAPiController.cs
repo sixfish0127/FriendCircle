@@ -13,11 +13,13 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
         private readonly FriendCircleContext _context;
         private readonly NotificationService _notificationService;
         private readonly ILogger<FriendsApiController> _logger;
-        public FriendsApiController(FriendCircleContext context, NotificationService notificationService, ILogger<FriendsApiController> logger)
+        private readonly MutualFriendService _mutualFriendService;
+        public FriendsApiController(FriendCircleContext context, NotificationService notificationService, ILogger<FriendsApiController> logger, MutualFriendService mutualFriendService)
         {
             _context = context;
             _notificationService = notificationService;
             _logger = logger;
+            _mutualFriendService = mutualFriendService;
         }
 
         //發送朋友邀請
@@ -36,7 +38,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
                     (f.UserId1 == receiverId && f.UserId2 == senderId) ||
                     (f.UserId1 == senderId && f.UserId2 == receiverId));
 
-            if (existingRequest != null)
+            if (existingRequest.Status == FriendshipStatus.Accepted|| existingRequest.Status == FriendshipStatus.Pending)
             {
                 return Conflict("好友請求已存在或你們已經是好友了。");
             }
@@ -57,6 +59,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
             await _notificationService.CreateNotificationAsync(receiverId, senderId, message, NotificationsType.朋友邀請);
             return Ok(new { message = "Friend request sent successfully." });
         }
+
         // 回應好友請求
         [HttpPut("{requestId}/response-request/{status}")]
         public async Task<IActionResult> RespondToFriendRequest(int requestId, string status)
@@ -64,7 +67,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
             var request = await _context.FriendShip.FirstOrDefaultAsync(f => f.UserId2 == requestId);
             
             // 設置好友請求的狀態
-            request.Status = status == "Accepted" ? FriendshipStatus.Accepted : FriendshipStatus.Rejected;
+            request.Status = status == "Accepted" ? FriendshipStatus.Accepted : FriendshipStatus.NotFriend;
 
             // 生成通知並保存到數據庫
             var message = status == "Accepted" ? "您的好友請求已被接受" : "您的好友請求已被拒絕";
@@ -80,6 +83,50 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
             }
             return Ok($"Friend request {status.ToLower()}.");
         }
+
+        //取得好友請求
+        [HttpGet("friend-requests")]
+        public async Task<IActionResult> GetFriendRequests()
+        {
+            // 獲取目前登入用戶 ID
+            var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+
+            // 過濾待確認的好友請求
+            var friendRequests = await _context.FriendShip
+                .Where(f => f.UserId1 == userId && f.Status == FriendshipStatus.Pending)
+                .Join(
+                    _context.userInfo,
+                    f => f.UserId2,
+                    u => u.id,
+                    (f, u) => new
+                    {
+                        f.Id,
+                        f.Status,
+                        SenderId = u.id,
+                        SenderName = u.name,
+                        SenderImage = u.userimage
+                    }
+                )
+                .ToListAsync();
+            // 取得共同好友數量
+            var result = new List<object>();
+            foreach (var request in friendRequests)
+            {
+                var mutualFriendCount = await _mutualFriendService.GetMutualFriendCountAsync(userId, request.SenderId);
+                result.Add(new
+                {
+                    request.Id,
+                    request.SenderId,
+                    request.SenderName,
+                    request.SenderImage,
+                    status = request.Status.ToString(),
+                    MutualFriend = mutualFriendCount
+                });
+            }
+            Console.WriteLine("回傳資料:",result);
+            return Ok(result);
+        }
+
         // 取得好友清單
         [HttpGet("list")]
         public async Task<IActionResult> GetFriendsList()

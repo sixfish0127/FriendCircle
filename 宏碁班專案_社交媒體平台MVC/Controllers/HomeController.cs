@@ -36,8 +36,11 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
         public IActionResult PostDetails(int id)
         {                        
             var user = _dbManager.getUserById(id);
+            var loginId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+            var friendShip = _friendCircleContext.FriendShip.FirstOrDefault(f => f.UserId1 == id && f.UserId2 == loginId);
             //使用ViewBag傳遞資料到View
-            ViewBag.LoginId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+            ViewBag.LoginId = loginId;
+            ViewBag.FriendShip = friendShip;
             return View(user);
         }
         

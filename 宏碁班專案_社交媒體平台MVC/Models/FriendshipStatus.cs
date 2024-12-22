@@ -5,6 +5,6 @@
         Pending=1,//待處理
         Accepted,//已接受
         Blocked, //已封鎖
-        Rejected //已拒絕
+        NotFriend //已拒絕
     }
 }
