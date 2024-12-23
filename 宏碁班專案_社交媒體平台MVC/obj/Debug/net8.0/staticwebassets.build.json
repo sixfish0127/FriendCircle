@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "U9FRHfHj9j6AWi6jhGbhpks1pox3GNUiPMNdwM1o3KY=",
+  "Hash": "q0MO/jkThJD3l3HHN+11YhxbRK9sA161xSrxTt0I3PU=",
   "Source": "宏碁班專案_社交媒體平台MVC",
   "BasePath": "_content/宏碁班專案_社交媒體平台MVC",
   "Mode": "Default",
@@ -220,8 +220,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "3bf7pwiuqp",
-      "Integrity": "wd1sy3ogruC2aeHPoZW8M5NKIJmuFSKP+Z2UFyYWsqI=",
+      "Fingerprint": "yjp3upvj87",
+      "Integrity": "HjbTljo6pRhtk9dbmMkcO7AR0jmnKwwegk+jNqG3DYg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\style2.css"
@@ -4126,8 +4126,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "iwnqezkbp5",
-      "Integrity": "gjXF2+Gemk1rp5txRektnSSsQykAqVEcTxZ6VkM8q7A=",
+      "Fingerprint": "5d17865aly",
+      "Integrity": "qbLYwEdt+EECIy//PXOqI52sGu1rLER7uOSLWQ/ykcI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\scripts.js"
@@ -5990,51 +5990,6 @@
       ]
     },
     {
-      "Route": "css/style2.3bf7pwiuqp.css",
-      "AssetFile": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\css\\style2.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "524"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"wd1sy3ogruC2aeHPoZW8M5NKIJmuFSKP+Z2UFyYWsqI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 17 Dec 2024 03:06:25 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "3bf7pwiuqp"
-        },
-        {
-          "Name": "label",
-          "Value": "css/style2.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-wd1sy3ogruC2aeHPoZW8M5NKIJmuFSKP+Z2UFyYWsqI="
-        }
-      ]
-    },
-    {
       "Route": "css/style2.css",
       "AssetFile": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\css\\style2.css",
       "Selectors": [],
@@ -6045,7 +6000,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "524"
+          "Value": "695"
         },
         {
           "Name": "Content-Type",
@@ -6053,11 +6008,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"wd1sy3ogruC2aeHPoZW8M5NKIJmuFSKP+Z2UFyYWsqI=\""
+          "Value": "\"HjbTljo6pRhtk9dbmMkcO7AR0jmnKwwegk+jNqG3DYg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 17 Dec 2024 03:06:25 GMT"
+          "Value": "Mon, 23 Dec 2024 12:23:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6067,7 +6022,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-wd1sy3ogruC2aeHPoZW8M5NKIJmuFSKP+Z2UFyYWsqI="
+          "Value": "sha256-HjbTljo6pRhtk9dbmMkcO7AR0jmnKwwegk+jNqG3DYg="
+        }
+      ]
+    },
+    {
+      "Route": "css/style2.yjp3upvj87.css",
+      "AssetFile": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\css\\style2.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "695"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HjbTljo6pRhtk9dbmMkcO7AR0jmnKwwegk+jNqG3DYg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Dec 2024 12:23:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yjp3upvj87"
+        },
+        {
+          "Name": "label",
+          "Value": "css/style2.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HjbTljo6pRhtk9dbmMkcO7AR0jmnKwwegk+jNqG3DYg="
         }
       ]
     },
@@ -21242,7 +21242,7 @@
       ]
     },
     {
-      "Route": "js/scripts.iwnqezkbp5.js",
+      "Route": "js/scripts.5d17865aly.js",
       "AssetFile": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\wwwroot\\js\\scripts.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -21252,7 +21252,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "15628"
+          "Value": "15696"
         },
         {
           "Name": "Content-Type",
@@ -21260,11 +21260,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"gjXF2+Gemk1rp5txRektnSSsQykAqVEcTxZ6VkM8q7A=\""
+          "Value": "\"qbLYwEdt+EECIy//PXOqI52sGu1rLER7uOSLWQ/ykcI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 04 Dec 2024 10:36:15 GMT"
+          "Value": "Mon, 23 Dec 2024 13:18:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21274,7 +21274,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "iwnqezkbp5"
+          "Value": "5d17865aly"
         },
         {
           "Name": "label",
@@ -21282,7 +21282,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-gjXF2+Gemk1rp5txRektnSSsQykAqVEcTxZ6VkM8q7A="
+          "Value": "sha256-qbLYwEdt+EECIy//PXOqI52sGu1rLER7uOSLWQ/ykcI="
         }
       ]
     },
@@ -21297,7 +21297,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "15628"
+          "Value": "15696"
         },
         {
           "Name": "Content-Type",
@@ -21305,11 +21305,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"gjXF2+Gemk1rp5txRektnSSsQykAqVEcTxZ6VkM8q7A=\""
+          "Value": "\"qbLYwEdt+EECIy//PXOqI52sGu1rLER7uOSLWQ/ykcI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 04 Dec 2024 10:36:15 GMT"
+          "Value": "Mon, 23 Dec 2024 13:18:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21319,7 +21319,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-gjXF2+Gemk1rp5txRektnSSsQykAqVEcTxZ6VkM8q7A="
+          "Value": "sha256-qbLYwEdt+EECIy//PXOqI52sGu1rLER7uOSLWQ/ykcI="
         }
       ]
     },

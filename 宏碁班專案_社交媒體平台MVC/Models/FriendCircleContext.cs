@@ -192,6 +192,7 @@ public partial class FriendCircleContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasDefaultValue("/images/default.jpg");
+            entity.Property(e=>e.status).HasDefaultValue(UserStatus.離線);
         });
 
         OnModelCreatingPartial(modelBuilder);

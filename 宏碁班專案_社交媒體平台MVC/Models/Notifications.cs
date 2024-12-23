@@ -15,7 +15,6 @@ public partial class Notifications
 
     public int? FriendRequestId { get; set; }
 
-
     public NotificationsType Type { get; set; }
 
     public string Message { get; set; }

@@ -126,6 +126,13 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
         //登出
         public IActionResult Logout()
         {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var user = _dbManager.getUserById(int.Parse(userId));
+            if (user != null)
+            {
+                user.status = UserStatus.離線;
+                _dbManager.UpdateUser(user);
+            }
             //登出，清除身份驗證Cookie
             HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Login");
@@ -196,6 +203,11 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
                     user.password = "";
                     return View(user);
                 }
+                else
+                {
+                    loginUser.status = UserStatus.在線;
+                    _dbManager.UpdateUser(loginUser);
+                }
                 //登入成功，建立身份驗證Cookie
                 var claims = new List<Claim>
                 {
@@ -213,6 +225,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                                          new ClaimsPrincipal(claimsIdentity),
                                          authProperties);
+
                 //登入成功，重定向到首頁
                 return RedirectToAction("Newsfeed", "Posts");
             }

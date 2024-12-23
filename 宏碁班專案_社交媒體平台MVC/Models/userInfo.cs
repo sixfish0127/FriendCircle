@@ -2,8 +2,8 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace 宏碁班專案_社交媒體平台MVC.Models;
 
@@ -27,10 +27,11 @@ public partial class userInfo
 
     public string description { get; set; }
 
+    public UserStatus status { get; set; }
+
     public DateTime? initDate { get; set; }
     [NotMapped]
     public string confirmPassword { get; set; }
-
 
     public virtual ICollection<CommentFavorites> CommentFavorites { get; set; } = new List<CommentFavorites>();
 

@@ -135,11 +135,16 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
 
             var friends = await _context.FriendShip
                 .Where(f => f.UserId1 == userId && f.Status == FriendshipStatus.Accepted)
-                .Select(f => new
-                {
-                    f.UserId2,
-                    FriendName = _context.userInfo.FirstOrDefault(u => u.id == f.UserId2).name
-                })
+                .Join(_context.userInfo,
+                    f => f.UserId2,
+                    u => u.id,
+                    (f, u) => new
+                    {
+                        u.id,
+                        u.name,
+                        u.userimage,
+                        u.status,
+                    })
                 .ToListAsync();
 
             return Ok(friends);

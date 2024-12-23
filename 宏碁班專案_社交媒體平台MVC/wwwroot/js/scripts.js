@@ -307,10 +307,11 @@ $(document).ready(function() {
         $('.navigation').toggleClass('nav-active');
     });
 
-    $('.model-popup-chat').on('click', function () {
+    $('.model-popup-chat').on('click',  function () {
         $('.modal-popup-chat').toggleClass('d-block');
         return false;
     });
+
     $('.modal-popup-chat a').on('click', function () {
         $('.modal-popup-chat').removeClass('d-block');
         return false;
