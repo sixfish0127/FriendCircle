@@ -13,7 +13,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
         private readonly ILogger<PostsController> _logger;
         private readonly DBmanager _dbManager;
         private readonly FriendCircleContext _friendCircleContext;
-        public PostsController(ILogger<PostsController> logger, DBmanager dbManager,FriendCircleContext friendCircleContext)
+        public PostsController(ILogger<PostsController> logger, DBmanager dbManager, FriendCircleContext friendCircleContext)
         {
             _logger = logger;
             _dbManager = dbManager;
@@ -23,10 +23,10 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
         {
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             var user = _dbManager.getUserById(int.Parse(userId));
-            
+
             return View(user);
         }
 
-                
+
     }
 }

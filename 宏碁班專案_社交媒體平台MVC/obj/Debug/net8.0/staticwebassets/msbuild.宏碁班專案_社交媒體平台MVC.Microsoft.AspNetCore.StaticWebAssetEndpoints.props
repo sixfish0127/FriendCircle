@@ -2328,6 +2328,18 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"x239b2eyeb"},{"Name":"integrity","Value":"sha256-J/Uo50pBk0LbiFgMet1L4daIKHRkEPPqMdqMGPiI14E="},{"Name":"label","Value":"_content/\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC/js/scripts.js"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"15623"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022J/Uo50pBk0LbiFgMet1L4daIKHRkEPPqMdqMGPiI14E=\u0022"},{"Name":"Last-Modified","Value":"Mon, 23 Dec 2024 14:26:48 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/宏碁班專案_社交媒體平台MVC/js/signalr.min.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\signalr.min.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-4opyCjWbN8sBV1jVQ/kIcw7Vu\u002BR42wlQa7aIfxgxNTg="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"47647"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u00224opyCjWbN8sBV1jVQ/kIcw7Vu\u002BR42wlQa7aIfxgxNTg=\u0022"},{"Name":"Last-Modified","Value":"Tue, 24 Dec 2024 08:39:40 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/宏碁班專案_社交媒體平台MVC/js/signalr.min.m3i9f6419i.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\signalr.min.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"m3i9f6419i"},{"Name":"integrity","Value":"sha256-4opyCjWbN8sBV1jVQ/kIcw7Vu\u002BR42wlQa7aIfxgxNTg="},{"Name":"label","Value":"_content/\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC/js/signalr.min.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"47647"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u00224opyCjWbN8sBV1jVQ/kIcw7Vu\u002BR42wlQa7aIfxgxNTg=\u0022"},{"Name":"Last-Modified","Value":"Tue, 24 Dec 2024 08:39:40 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/宏碁班專案_社交媒體平台MVC/js/site.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

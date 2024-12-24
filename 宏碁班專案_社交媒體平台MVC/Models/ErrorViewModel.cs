@@ -1,4 +1,4 @@
-namespace å®ç¢ç­å°ˆæ¡ˆ_ç¤¾äº¤åª’é«”å¹³å°MVC.Models
+namespace §»ùÖ¯Z±M®×_ªÀ¥æ´CÅé¥­¥xMVC.Models
 {
     public class ErrorViewModel
     {

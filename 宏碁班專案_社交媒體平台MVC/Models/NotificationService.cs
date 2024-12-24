@@ -35,27 +35,27 @@
             }
 
             _context.Notifications.Add(notification);
-            await _context.SaveChangesAsync();           
+            await _context.SaveChangesAsync();
 
             return notification;
         }
         //多載方法 for friend request
-        public async Task<Notifications> CreateNotificationAsync(int userId, int friendId ,string message, NotificationsType type)
+        public async Task<Notifications> CreateNotificationAsync(int userId, int friendId, string message, NotificationsType type)
         {
             var notification = new Notifications
             {
                 UserId = userId,
                 Message = message,
                 Type = type,
-                CreatAt = DateTime.Now, 
+                CreatAt = DateTime.Now,
                 FriendRequestId = friendId,
                 IsRead = false
-            };                   
+            };
 
             _context.Notifications.Add(notification);
             await _context.SaveChangesAsync();
-            
+
             return notification;
-        }        
+        }
     }
 }

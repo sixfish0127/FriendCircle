@@ -6,7 +6,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Models
     public class DBmanager
     {
         //建立FriendCircleContext物件，連接資料庫
-        private readonly FriendCircleContext _friendCircleContext;        
+        private readonly FriendCircleContext _friendCircleContext;
         public DBmanager(FriendCircleContext friendCircleContext)
         {
             _friendCircleContext = friendCircleContext;
@@ -32,7 +32,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Models
         }
 
         public bool isUserExist(string email)
-        {            
+        {
             //檢查信箱是否已存在
             var existUser = _friendCircleContext.userInfo.FirstOrDefault(u => u.email == email);
             return existUser != null;
@@ -51,7 +51,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Models
         }
         // 尋找UserId
         public userInfo getUserById(int id)
-        {            
+        {
             return _friendCircleContext.userInfo.FirstOrDefault(u => u.id == id);
         }
         // 更新用戶
@@ -76,7 +76,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Models
                 .Where(p => p.Id == postId)
                 .Select(p => p.UserId) // 選擇貼文的作者 ID
                 .FirstOrDefault();
-           
+
             return postOwnerId;
         }
 

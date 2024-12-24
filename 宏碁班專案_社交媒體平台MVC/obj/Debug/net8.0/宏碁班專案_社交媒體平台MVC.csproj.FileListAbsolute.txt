@@ -169,7 +169,6 @@ C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁�
 C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁班專案_社交媒體平台MVC\bin\Debug\net8.0\宏碁班專案_社交媒體平台MVC.staticwebassets.endpoints.json
 C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁班專案_社交媒體平台MVC\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁班專案_社交媒體平台MVC\obj\Debug\net8.0\staticwebassets\msbuild.宏碁班專案_社交媒體平台MVC.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁班專案_社交媒體平台MVC\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁班專案_社交媒體平台MVC\bin\Debug\net8.0\efpt.config.json
 C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁班專案_社交媒體平台MVC\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁班專案_社交媒體平台MVC\obj\Debug\net8.0\宏碁班專案_社交媒體平台MVC.sourcelink.json
@@ -178,6 +177,7 @@ C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁�
 C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁班專案_社交媒體平台MVC\bin\Debug\net8.0\SixLabors.ImageSharp.Drawing.dll
 C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁班專案_社交媒體平台MVC\bin\Debug\net8.0\libman.json
 C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁班專案_社交媒體平台MVC\bin\Debug\net8.0\Newtonsoft.Json.dll
-C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁班專案_社交媒體平台MVC\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
-C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁班專案_社交媒體平台MVC\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Common.dll
-C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁班專案_社交媒體平台MVC\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
+C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁班專案_社交媒體平台MVC\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁班專案_社交媒體平台MVC\bin\Debug\net8.0\Microsoft.Azure.SignalR.Common.dll
+C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁班專案_社交媒體平台MVC\bin\Debug\net8.0\Microsoft.Azure.SignalR.dll
+C:\Users\x1620\Desktop\JackyProjct\宏碁班專案_社交媒體平台MVC\宏碁班專案_社交媒體平台MVC\bin\Debug\net8.0\Microsoft.Azure.SignalR.Protocols.dll

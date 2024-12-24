@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Http.Features;
+using Microsoft.Azure.SignalR;
+using Microsoft.AspNetCore.SignalR;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +21,9 @@ builder.Services.AddHttpClient();
 builder.Services.AddScoped<NotificationService>();
 // 註冊 MutualFriendService
 builder.Services.AddScoped<MutualFriendService>();
+// 註冊 IR
+builder.Services.AddSignalR();
+builder.Services.AddSignalR().AddAzureSignalR();
 
 // 添加身份驗證服務
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
@@ -39,6 +44,7 @@ builder.Services.Configure<FormOptions>(options =>
 {
     options.MultipartBodyLengthLimit = 10485760; // 限制文件大小為 10 MB
 });
+
 var app = builder.Build();
 
 // 配置 HTTP 請求管道
@@ -62,5 +68,6 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=User}/{action=Login}/{id?}");
+
 
 app.Run();

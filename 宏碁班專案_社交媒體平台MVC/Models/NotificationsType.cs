@@ -2,12 +2,12 @@
 {
     public enum NotificationsType
     {
-        愛心=0,
-        按讚=1,
+        愛心 = 0,
+        按讚 = 1,
         留言,
         朋友邀請,
         朋友接受,
         分享,
-        
+
     }
 }

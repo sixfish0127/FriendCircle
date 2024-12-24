@@ -335,7 +335,7 @@
                                         <img src="${f.userimage}" alt="image" class="w35">
                                     </figure>
                                     <h3 class="fw-700 mb-0 mt-0">
-                                        <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" href="#" onclick="toggleChatWindow('${escapeHtml(f.name)}', ${f.id},${f.status}, '${escapeHtml(f.userimage)}');return false;">${f.name}</a>
+                                        <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" href="#" onclick="toggleChatWindow('${f.name}', ${f.id},${f.status}, '${f.userimage}');return false;">${f.name}</a>
                                     </h3>
                                     <span class="bg-secondary ms-auto btn-round-xss"></span>
                                 </li>
@@ -536,3 +536,5 @@
 </body>
 
 </html>
+
+<script src="~/js/signalr.min.js"></script>

@@ -2,9 +2,9 @@
 {
     public enum FriendshipStatus
     {
-        Pending=1,//待處理
+        Pending = 1,//待處理
         Accepted,//已接受
         Blocked, //已封鎖
-        NotFriend //已拒絕
+        NotFriend //不是好友
     }
 }

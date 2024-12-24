@@ -1,0 +1,39 @@
+﻿.comments-section {
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+.comments-list .comment {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.comments-section input {
+    width: 80%;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.comments-section button {
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.comments-section button:hover {
+    background-color: #0056b3;
+}
+.chat-window {
+    transition: all 0.3s ease-in-out;
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.chat-window.open {
+    transform: translateY(0);
+    opacity: 1;
+}

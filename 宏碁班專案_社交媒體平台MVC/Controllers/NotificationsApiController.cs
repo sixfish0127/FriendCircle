@@ -17,17 +17,17 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
         public NotificationsApiController(FriendCircleContext context)
         {
             _context = context;
-        }        
+        }
 
         // 查詢用戶的所有通知
         [HttpGet]
         public async Task<IActionResult> GetNotifications()
         {
-             // 獲取目前登入用戶的 ID
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;            
-            
+            // 獲取目前登入用戶的 ID
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
             var notifications = await _context.Notifications
-                .Where(n=>n.UserId==int.Parse(userId))
+                .Where(n => n.UserId == int.Parse(userId))
                 .Include(n => n.Comment)  // 包括留言資訊
                 .ThenInclude(c => c.User) // 包括留言者的用戶資訊                
                 .OrderBy(n => n.CreatAt)
@@ -42,7 +42,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
                     commenterImage = n.Comment.User.userimage, // 留言者頭像
                     postOwnerName = n.User.name, // 貼文擁有者名稱（可選）
                     postOwnerImage = n.User.userimage, // 貼文擁有者頭像（可選）
-                    friendName = _context.userInfo.Where(u=>u.id==n.FriendRequestId).Select(u => u.name).FirstOrDefault(), // 朋友名稱
+                    friendName = _context.userInfo.Where(u => u.id == n.FriendRequestId).Select(u => u.name).FirstOrDefault(), // 朋友名稱
                     friendImage = _context.userInfo.Where(u => u.id == n.FriendRequestId).Select(u => u.userimage).FirstOrDefault(), // 朋友頭像
                     friendId = n.FriendRequestId // 朋友ID    
                 })
@@ -50,7 +50,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
 
             return Ok(notifications);
         }
-        
+
 
         // 標記通知為已讀
         [HttpPut("{id}/mark-read")]
@@ -66,7 +66,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
             notification.IsRead = true;
             await _context.SaveChangesAsync();
             return Ok(new { success = true, message = "通知已標記為已讀" });
-        }            
+        }
     }
 }
 

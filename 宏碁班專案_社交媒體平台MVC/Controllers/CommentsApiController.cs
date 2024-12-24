@@ -14,7 +14,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
         private readonly FriendCircleContext _context;
         private readonly DBmanager _dbManager;
         private readonly NotificationService _notificationService;
-        public CommentsApiController(FriendCircleContext context,DBmanager dbManager, NotificationService notificationService)
+        public CommentsApiController(FriendCircleContext context, DBmanager dbManager, NotificationService notificationService)
         {
             _context = context;
             _dbManager = dbManager;
@@ -50,7 +50,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
                 var UserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
                 comment.UserId = int.Parse(UserId);
                 // 從貼文 ID 取得貼文擁有者 ID
-                var postOwnerId = _dbManager.GetPostOwnerId(comment.PostId);               
+                var postOwnerId = _dbManager.GetPostOwnerId(comment.PostId);
                 // 從用戶 ID 取得用戶名稱
                 var userName = await _context.userInfo
                     .Where(u => u.id == comment.UserId)
@@ -73,13 +73,14 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
                     .FirstOrDefault();
                 // 產生通知
                 var message = $"用戶 {commenterName} 對您的貼文留言: \"{comment.Content}\"";
-                await _notificationService.CreateNotificationAsync(postOwnerId, message, comment.ComentId, NotificationsType.留言);                
-                try {                     
+                await _notificationService.CreateNotificationAsync(postOwnerId, message, comment.ComentId, NotificationsType.留言);
+                try
+                {
                     return Ok(new
                     {
                         comment.ComentId,
                         comment.Content,
-                        User = userName?? "Unknown",
+                        User = userName ?? "Unknown",
                         Image = userimgage ?? "Unknown",
                         CreatedAt = comment.CreatedAt.ToString("yyyy-MM-dd HH:mm:ss")
                     });

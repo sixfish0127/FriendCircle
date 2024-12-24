@@ -22,13 +22,13 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
             _dbManager = dbManager;
             _webHostEnvironment = webHostEnvironment;
         }
-        public IActionResult Analytics() 
+        public IActionResult Analytics()
         {
             return View();
         }
         //用戶資訊頁面
         public IActionResult AccountInfo()
-        {            
+        {
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             var user = _dbManager.getUserById(int.Parse(userId));
             // 列印模型屬性值
@@ -86,14 +86,14 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
                 Console.WriteLine("文件為空");
                 return RedirectToAction("AccountInfo");
             }
-           
+
             var uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images");
             if (!Directory.Exists(uploadsFolder))
             {
                 Directory.CreateDirectory(uploadsFolder);
             }
             // 查詢當前用戶的舊圖片路徑
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;            
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             var user = _dbManager.getUserById(int.Parse(userId));
             //預設頭像
             var defaultimage = "/images/Default.jpg";
@@ -188,13 +188,13 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
         public async Task<IActionResult> Login(userInfo user, bool remeberMe)
         {   //驗證成功        
             if (ModelState.IsValid)
-            {                
+            {
                 if (string.IsNullOrWhiteSpace(user.email) || string.IsNullOrWhiteSpace(user.password))
                 {
                     ModelState.AddModelError("email", "電子郵件和密碼不能為空!");
                     return View(user);
                 }
-                var loginUser = _dbManager.getAccount(user.email, user.password);                
+                var loginUser = _dbManager.getAccount(user.email, user.password);
                 if (loginUser == null)
                 {
                     //登入失敗，顯示錯誤訊息
@@ -212,14 +212,14 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Email,loginUser.email),
-                    new Claim(ClaimTypes.NameIdentifier, loginUser.id.ToString()),                     
-                };                
+                    new Claim(ClaimTypes.NameIdentifier, loginUser.id.ToString()),
+                };
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-                
+
                 var authProperties = new AuthenticationProperties
                 {
                     IsPersistent = remeberMe,//登入狀態(勾選就是記住)                                                            
-                    ExpiresUtc = remeberMe ? DateTimeOffset.UtcNow.AddDays(30) :null
+                    ExpiresUtc = remeberMe ? DateTimeOffset.UtcNow.AddDays(30) : null
                 };
                 //設定身分驗證，將資訊(Claim)儲存在Cookie中，以便後續身分驗證和授權
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
@@ -248,7 +248,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
         //透過post方法註冊新用戶
         [HttpPost]
         public IActionResult Register(userInfo user)
-        {          
+        {
             if (ModelState.IsValid)
             {
                 if (string.IsNullOrWhiteSpace(user.email) || string.IsNullOrWhiteSpace(user.password))
@@ -256,7 +256,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
                     ModelState.AddModelError("confirmPassword", "所有欄位都必須填寫!");
                     return View(user);
                 }
-                
+
                 if (user.password != user.confirmPassword)
                 {
                     ModelState.AddModelError("confirmPassword", "密碼不一致!");
@@ -270,7 +270,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
                 return RedirectToAction("Login");
             }
             // 返回註冊頁面
-            return View(user);            
+            return View(user);
         }
         //檢查信箱是否重複
         [HttpPost]
@@ -278,14 +278,14 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
         {
             Console.WriteLine($"檢測信箱:{request.Email}");
             if (_dbManager.isUserExist(request.Email))
-            {   
+            {
                 //信箱已被使用時，不回傳布林值，阻擋表單sumbit
                 return Json($"{request.Email}已被使用");
             }
             // 信箱未被使用時，回傳布林值確保表單可以正常sumbit
             return Json(false);
         }
-        
+
     }
     // 使用類別來封裝資料，才能使用[FromBody]來讀取資料
     public class EmailRequest

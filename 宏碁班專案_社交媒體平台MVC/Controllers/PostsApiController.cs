@@ -15,28 +15,28 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
             _friendCircleContext = friendCircleContext;
         }
         [HttpGet]
-        public async Task<IActionResult> GetPosts(int page=1,int pageSize=10,bool userOnly = false,int?uid = null)
-        {            
-            if (page<1||pageSize<1) return BadRequest("無效的請求");
-            
+        public async Task<IActionResult> GetPosts(int page = 1, int pageSize = 10, bool userOnly = false, int? uid = null)
+        {
+            if (page < 1 || pageSize < 1) return BadRequest("無效的請求");
+
             var query = _friendCircleContext.Posts
                 .Include(p => p.User)
                 .OrderBy(p => p.CreatedAt);
 
-            
+
             if (uid.HasValue)
             {
                 //PostDetails頁面需要過濾特定使用者的貼文
                 query = query.Where(p => p.UserId == uid.Value).OrderBy(p => p.CreatedAt);
             }
-            else if(userOnly)
+            else if (userOnly)
             {
                 // Details頁面過濾只顯示當前使用者的貼文
-                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;                
+                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
                 query = query.Where(p => p.UserId == int.Parse(userId))
                  .OrderBy(p => p.CreatedAt); // 重新排序
             }
-            var posts = await query                                
+            var posts = await query
                 .Skip((page - 1) * pageSize)//跳過前面的資料
                 .Take(pageSize)//取得指定數量的資料
                 .Select(p => new
@@ -57,15 +57,15 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
             }
 
             return Ok(posts);
-        }        
+        }
         [HttpPost]
         public async Task<IActionResult> CreatePost([FromBody] Posts post)
         {
             if (ModelState.IsValid)
-            {                               
+            {
                 // 從登入的用戶取得用戶 ID
-                var UserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value; 
-                post.UserId = int.Parse(UserId);                
+                var UserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                post.UserId = int.Parse(UserId);
                 // 從用戶 ID 取得用戶名稱
                 var userName = await _friendCircleContext.userInfo
                     .Where(u => u.id == post.UserId)
@@ -75,7 +75,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
                 var userimgage = await _friendCircleContext.userInfo
                     .Where(u => u.id == post.UserId)
                     .Select(u => u.userimage)
-                    .FirstOrDefaultAsync();                
+                    .FirstOrDefaultAsync();
                 // 設定貼文的建立時間
                 post.CreatedAt = DateTime.Now;
                 // 新增貼文
@@ -87,8 +87,8 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
                     post.Id,
                     post.Content,
                     post.CreatedAt,
-                    User = userName?? "Unknown",
-                    Image = userimgage ?? "Unknown",                       
+                    User = userName ?? "Unknown",
+                    Image = userimgage ?? "Unknown",
                 });
             }
             // 回傳錯誤訊息

@@ -35,14 +35,14 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
             Console.WriteLine($"senderId:{friendRequest.SendId},receiverId:{friendRequest.ReceiverId}");
             var existingRequest = await _context.FriendShip
                 .FirstOrDefaultAsync(f =>
-                    (f.UserId1 == receiverId && f.UserId2 == senderId) ||
-                    (f.UserId1 == senderId && f.UserId2 == receiverId));
+                    f.UserId1 == receiverId && f.UserId2 == senderId ||
+                    f.UserId1 == senderId && f.UserId2 == receiverId);
 
-            if (existingRequest.Status == FriendshipStatus.Accepted|| existingRequest.Status == FriendshipStatus.Pending)
+            if (existingRequest.Status == FriendshipStatus.Accepted || existingRequest.Status == FriendshipStatus.Pending)
             {
                 return Conflict("好友請求已存在或你們已經是好友了。");
             }
-            
+
             var friendShip = new FriendShip
             {
                 UserId1 = receiverId,
@@ -65,17 +65,19 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
         public async Task<IActionResult> RespondToFriendRequest(int requestId, string status)
         {
             var request = await _context.FriendShip.FirstOrDefaultAsync(f => f.UserId2 == requestId);
-            
+
             // 設置好友請求的狀態
             request.Status = status == "Accepted" ? FriendshipStatus.Accepted : FriendshipStatus.NotFriend;
 
             // 生成通知並保存到數據庫
             var message = status == "Accepted" ? "您的好友請求已被接受" : "您的好友請求已被拒絕";
-            try { 
+            try
+            {
                 await _notificationService.CreateNotificationAsync(request.UserId2, request.UserId1, message, NotificationsType.朋友接受);
-            
+
                 await _context.SaveChangesAsync();
-            }catch (Exception e)
+            }
+            catch (Exception e)
             {
                 // 記錄異常並返回伺服器錯誤
                 _logger.LogError($"回覆好友請求時發生錯誤: {e.Message}");
@@ -123,7 +125,7 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
                     MutualFriend = mutualFriendCount
                 });
             }
-            Console.WriteLine("回傳資料:",result);
+            Console.WriteLine("回傳資料:", result);
             return Ok(result);
         }
 
@@ -134,9 +136,11 @@ namespace 宏碁班專案_社交媒體平台MVC.Controllers
             var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
 
             var friends = await _context.FriendShip
-                .Where(f => f.UserId1 == userId && f.Status == FriendshipStatus.Accepted)
+                .Where(f =>
+                    (f.UserId1 == userId || f.UserId2 == userId) &&
+                    f.Status == FriendshipStatus.Accepted)
                 .Join(_context.userInfo,
-                    f => f.UserId2,
+                    f => f.UserId1 == userId ? f.UserId2 : f.UserId1, // 確定好友的 ID
                     u => u.id,
                     (f, u) => new
                     {
