@@ -237,30 +237,7 @@
     
     <!-- 聊天室窗 -->
     <div class="modal-popup-chat" id="chat-container">
-        <div class="modal-popup-wrap bg-white p-0 shadow-lg rounded-3">
-            <div class="modal-popup-header w-100 border-bottom">
-                <div class="card p-3 d-block border-0 d-block">
-                    <figure class="avatar mb-0 float-left me-2">
-                        <img src="" alt="image" class="w35 me-1">
-                    </figure>
-                    <h5 class="fw-700 text-primary font-xssss mt-1 mb-1"></h5>
-                    <h4 class="text-grey-500 font-xsssss mt-0 mb-0"><span class="d-inline-block bg-success btn-round-xss m-0"></span> </h4>
-                    <a href="#" class="font-xssss position-absolute right-0 top-0 mt-3 me-4"><i class="ti-close text-grey-900 mt-2 d-inline-block"></i></a>
-                </div>
-            </div>
-            <div class="modal-popup-body w-100 p-3 h-auto">
-                <div class="message"><div class="message-content font-xssss lh-24 fw-500">Hi, how can I help you?</div></div>
-                <div class="date-break font-xsssss lh-24 fw-500 text-grey-500 mt-2 mb-2">Mon 10:20am</div>
-                <div class="message self text-right mt-2"><div class="message-content font-xssss lh-24 fw-500">I want those files for you. I want you to send 1 PDF and 1 image file.</div></div>
-                <div class="snippet pt-3 ps-4 pb-2 pe-3 mt-2 bg-grey rounded-xl float-right" data-title=".dot-typing"><div class="stage"><div class="dot-typing"></div></div></div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="modal-popup-footer w-100 border-top">
-                <div class="card p-3 d-block border-0 d-block">
-                    <div class="form-group icon-right-input style1-input mb-0"><input type="text" placeholder="Start typing.." class="form-control rounded-xl bg-greylight border-0 font-xssss fw-500 ps-3"><i class="feather-send text-grey-500 font-md"></i></div>
-                </div>
-            </div>
-        </div>
+        
     </div>
 
 
@@ -287,10 +264,18 @@
         //載入通知
         document.addEventListener("DOMContentLoaded", function () {
             loadNotifications();
-            // loadFriends();
+            loadFriends();
         });
-
+        //切換聊天室窗
+        function toggleblock(){
+            const block = document.getElementById('chat-container');
+            if(block.className==='modal-popup-chat')
+            {block.className='modal-popup-chat d-block';}else{
+                block.className='modal-popup-chat';
+            }
+        }
         function toggleChatWindow(friendName, friendId,friendstatus, friendimage) {
+            toggleblock()
             console.log("已觸發方法");
             // 確認聊天室是否已經存在
             const existingChatWindow = document.getElementById(`chat-window-${friendId}`);
@@ -300,33 +285,30 @@
             }else {
                   // 如果聊天室不存在，動態生成窗口
                   const chatWindow = document.createElement("div");
-                  chatWindow.className = "chat-window";
+                  chatWindow.className = "modal-popup-wrap bg-white p-0 shadow-lg rounded-3";
                   chatWindow.id = `chat-window-${friendId}`;
-                  chatWindow.innerHTML = `
-                    <div class="modal-popup-wrap bg-white p-0 shadow-lg rounded-3">
-                        <div class="modal-popup-header w-100 border-bottom">
-                            <div class="card p-3 d-block border-0 d-block">
-                                <figure class="avatar mb-0 float-left me-2">
-                                    <img src="${friendimage}" alt="image" class="w35 me-1">
-                                </figure>
-                                <h5 class="fw-700 text-primary font-xssss mt-1 mb-1">${friendName}</h5>
-                                <h4 class="text-grey-500 font-xsssss mt-0 mb-0"><span class="d-inline-block bg-success btn-round-xss m-0"></span> ${friendstatus}</h4>
-                                <a href="#" class="font-xssss position-absolute right-0 top-0 mt-3 me-4"><i class="ti-close text-grey-900 mt-2 d-inline-block"></i></a>
-                            </div>
-                        </div>
-                        <div class="modal-popup-body w-100 p-3 h-auto">
-                            <div class="message"><div class="message-content font-xssss lh-24 fw-500">Hi, how can I help you?</div></div>
-                            <div class="date-break font-xsssss lh-24 fw-500 text-grey-500 mt-2 mb-2">Mon 10:20am</div>
-                            <div class="message self text-right mt-2"><div class="message-content font-xssss lh-24 fw-500">I want those files for you. I want you to send 1 PDF and 1 image file.</div></div>
-                            <div class="snippet pt-3 ps-4 pb-2 pe-3 mt-2 bg-grey rounded-xl float-right" data-title=".dot-typing"><div class="stage"><div class="dot-typing"></div></div></div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="modal-popup-footer w-100 border-top">
-                            <div class="card p-3 d-block border-0 d-block">
-                                <div class="form-group icon-right-input style1-input mb-0"><input type="text" placeholder="Start typing.." class="form-control rounded-xl bg-greylight border-0 font-xssss fw-500 ps-3"><i class="feather-send text-grey-500 font-md"></i></div>
-                            </div>
+                  chatWindow.innerHTML = `                    
+                    <div class="modal-popup-header w-100 border-bottom">
+                        <div class="card p-3 d-block border-0 d-block">
+                            <figure class="avatar mb-0 float-left me-2">
+                                <img src="${friendimage}" alt="image" class="w35 me-1">
+                            </figure>
+                            <h5 class="fw-700 text-primary font-xssss mt-1 mb-1">${friendName}</h5>
+                            <h4 class="text-grey-500 font-xsssss mt-0 mb-0"><span class="d-inline-block bg-success btn-round-xss m-0"></span> ${friendstatus}</h4>                            
                         </div>
                     </div>
+                    <div class="modal-popup-body w-100 p-3 h-auto">
+                        <div class="message"><div class="message-content font-xssss lh-24 fw-500">Hi, how can I help you?</div></div>
+                        <div class="date-break font-xsssss lh-24 fw-500 text-grey-500 mt-2 mb-2">Mon 10:20am</div>
+                        <div class="message self text-right mt-2"><div class="message-content font-xssss lh-24 fw-500">I want those files for you. I want you to send 1 PDF and 1 image file.</div></div>
+                        <div class="snippet pt-3 ps-4 pb-2 pe-3 mt-2 bg-grey rounded-xl float-right" data-title=".dot-typing"><div class="stage"><div class="dot-typing"></div></div></div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="modal-popup-footer w-100 border-top">
+                        <div class="card p-3 d-block border-0 d-block">
+                            <div class="form-group icon-right-input style1-input mb-0"><input type="text" placeholder="Start typing.." class="form-control rounded-xl bg-greylight border-0 font-xssss fw-500 ps-3"><i class="feather-send text-grey-500 font-md"></i></div>
+                        </div>
+                    </div>                    
                   `;
 
                   // 將聊天室添加到容器
@@ -365,7 +347,7 @@
                                             <img src="${f.userimage}" alt="image" class="w35">
                                         </figure>
                                         <h3 class="fw-700 mb-0 mt-0">
-                                            <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" href="#" onclick="toggleChatWindow('${f.name}', ${f.id},${f.status}, '${f.userimage}');">${f.name}</a>
+                                            <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" id="alink" href="#" onclick="toggleChatWindow('${f.name}', ${f.id},${f.status}, '${f.userimage}'); return false;">${f.name}</a>
                                         </h3>
                                         <span class="bg-success ms-auto btn-round-xss"></span>
                                     </li>
@@ -389,7 +371,7 @@
                                             <img src="${f.userimage}" alt="image" class="w35">
                                         </figure>
                                         <h3 class="fw-700 mb-0 mt-0">
-                                            <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" href="#">${f.name}</a>
+                                            <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" href="#" onclick="toggleChatWindow('${f.name}', ${f.id},${f.status}, '${f.userimage}'); return false;">${f.name}</a>
                                         </h3>
                                         <span class="bg-info ms-auto btn-round-xss"></span>
                                     </li>
@@ -401,7 +383,7 @@
                                             <img src="${f.userimage}" alt="image" class="w35">
                                         </figure>
                                         <h3 class="fw-700 mb-0 mt-0">
-                                            <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" href="#">${f.name}</a>
+                                            <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" href="#" onclick="toggleChatWindow('${f.name}', ${f.id},${f.status}, '${f.userimage}'); return false;">${f.name}</a>
                                         </h3>
                                         <span class="bg-danger ms-auto btn-round-xss"></span>
                                     </li>

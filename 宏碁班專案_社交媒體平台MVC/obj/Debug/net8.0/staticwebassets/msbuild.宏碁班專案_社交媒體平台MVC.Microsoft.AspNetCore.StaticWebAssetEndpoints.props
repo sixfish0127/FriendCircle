@@ -2316,17 +2316,17 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"s101p6pe1n"},{"Name":"integrity","Value":"sha256-gKixMt\u002BnJKvv8AmtwdSVLRi8BBpN9TF6cxyAREuJ2yk="},{"Name":"label","Value":"_content/\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC/js/plugin.js"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"250740"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022gKixMt\u002BnJKvv8AmtwdSVLRi8BBpN9TF6cxyAREuJ2yk=\u0022"},{"Name":"Last-Modified","Value":"Mon, 26 Dec 2022 14:02:45 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/宏碁班專案_社交媒體平台MVC/js/scripts.5d17865aly.js">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\scripts.js'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"5d17865aly"},{"Name":"integrity","Value":"sha256-qbLYwEdt\u002BEECIy//PXOqI52sGu1rLER7uOSLWQ/ykcI="},{"Name":"label","Value":"_content/\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC/js/scripts.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"15696"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022qbLYwEdt\u002BEECIy//PXOqI52sGu1rLER7uOSLWQ/ykcI=\u0022"},{"Name":"Last-Modified","Value":"Mon, 23 Dec 2024 13:18:45 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/宏碁班專案_社交媒體平台MVC/js/scripts.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\scripts.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-qbLYwEdt\u002BEECIy//PXOqI52sGu1rLER7uOSLWQ/ykcI="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"15696"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022qbLYwEdt\u002BEECIy//PXOqI52sGu1rLER7uOSLWQ/ykcI=\u0022"},{"Name":"Last-Modified","Value":"Mon, 23 Dec 2024 13:18:45 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-J/Uo50pBk0LbiFgMet1L4daIKHRkEPPqMdqMGPiI14E="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"15623"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022J/Uo50pBk0LbiFgMet1L4daIKHRkEPPqMdqMGPiI14E=\u0022"},{"Name":"Last-Modified","Value":"Mon, 23 Dec 2024 14:26:48 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/宏碁班專案_社交媒體平台MVC/js/scripts.x239b2eyeb.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\scripts.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"x239b2eyeb"},{"Name":"integrity","Value":"sha256-J/Uo50pBk0LbiFgMet1L4daIKHRkEPPqMdqMGPiI14E="},{"Name":"label","Value":"_content/\u5B8F\u7881\u73ED\u5C08\u6848_\u793E\u4EA4\u5A92\u9AD4\u5E73\u53F0MVC/js/scripts.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"15623"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022J/Uo50pBk0LbiFgMet1L4daIKHRkEPPqMdqMGPiI14E=\u0022"},{"Name":"Last-Modified","Value":"Mon, 23 Dec 2024 14:26:48 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/宏碁班專案_社交媒體平台MVC/js/site.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>
