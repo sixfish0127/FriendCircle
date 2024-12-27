@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC.csproj": {}
+    "C:\\Users\\a0970\\Desktop\\dowloads\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC.csproj": {
+    "C:\\Users\\a0970\\Desktop\\dowloads\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC.csproj",
+        "projectUniqueName": "C:\\Users\\a0970\\Desktop\\dowloads\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC.csproj",
         "projectName": "宏碁班專案_社交媒體平台MVC",
-        "projectPath": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC.csproj",
-        "packagesPath": "C:\\Users\\x1620\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\x1620\\Desktop\\JackyProjct\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\obj\\",
+        "projectPath": "C:\\Users\\a0970\\Desktop\\dowloads\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC.csproj",
+        "packagesPath": "C:\\Users\\a0970\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\a0970\\Desktop\\dowloads\\宏碁班專案_社交媒體平台MVC\\宏碁班專案_社交媒體平台MVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\x1620\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\a0970\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
